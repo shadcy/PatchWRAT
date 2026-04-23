@@ -95,7 +95,13 @@ class FrequencySparseAttention(nn.Module):
         super().__init__()
         self.num_heads = num_heads
         self.d_model   = d_model
-        self.threshold = threshold
+        
+        # Handle both Fixed floats and Learnable tensors gracefully
+        if isinstance(threshold, float):
+            self.threshold = torch.tensor(threshold)
+        else:
+            self.threshold = threshold
+            
         self.q_proj   = nn.Linear(d_model, d_model)
         self.k_proj   = nn.Linear(d_model, d_model)
         self.v_proj   = nn.Linear(d_model, d_model)
@@ -105,23 +111,32 @@ class FrequencySparseAttention(nn.Module):
         B, L, D = q_x.shape
         H   = self.num_heads
         D_h = D // H
+        
         Q = self.q_proj(q_x).view(B, L, H, D_h).transpose(1, 2)
         K = self.k_proj(k_x).view(B, -1, H, D_h).transpose(1, 2)
         V = self.v_proj(v_x).view(B, -1, H, D_h).transpose(1, 2)
-        scores = torch.matmul(Q, K.transpose(-2, -1)) / (D_h ** 0.5)
         
-        if energy_coeffs is not None:
-            energy = torch.abs(energy_coeffs).mean(dim=-1)
-            mask   = energy > self.threshold
-            mask   = mask.view(B, 1, 1, -1)
-            scores = scores.masked_fill(~mask, float('-inf'))
-            
+        scores = torch.matmul(Q, K.transpose(-2, -1)) / (D_h ** 0.5)
         attn_weights = F.softmax(scores, dim=-1)
         attn_weights = torch.nan_to_num(attn_weights, nan=0.0)
+        
+        # --- THE DIFFERENTIABLE FIX ---
+        if energy_coeffs is not None:
+            energy = torch.abs(energy_coeffs).mean(dim=-1)
+            
+            # Ensure threshold is on the same device as the energy tensor
+            current_threshold = self.threshold.to(energy.device)
+            
+            # The "Soft" Sigmoid Gate (Temperature = 10.0)
+            gate = torch.sigmoid((energy - current_threshold) * 10.0)
+            gate = gate.view(B, 1, 1, -1)
+            
+            # Multiply attention weights by the gate (Kills low-energy signals gently)
+            attn_weights = attn_weights * gate
+            
         out = torch.matmul(attn_weights, V)
         out = out.transpose(1, 2).contiguous().view(B, L, D)
         return self.out_proj(out)
-
 
 class WRATBlock(nn.Module):
     def __init__(self, d_model, num_heads, sparsity_tau=0.1, dropout=0.2):
@@ -161,10 +176,14 @@ class LearnableTauWRATBlock(nn.Module):
         self._block  = WRATBlock(d_model, num_heads, sparsity_tau=tau_init, dropout=dropout)
 
     @property
-    def tau(self): return torch.sigmoid(self.raw_tau).item()
+    def tau(self): 
+        # We keep .item() here purely so the print statement at the end of training is readable
+        return torch.sigmoid(self.raw_tau).item()
 
     def forward(self, LL, LH):
-        self._block.intra_LH_attn.threshold = torch.sigmoid(self.raw_tau).item()
+        # --- THE .item() FIX ---
+        # We pass the raw PyTorch Tensor so backpropagation gradients can flow back to raw_tau!
+        self._block.intra_LH_attn.threshold = torch.sigmoid(self.raw_tau)
         return self._block(LL, LH)
 
 

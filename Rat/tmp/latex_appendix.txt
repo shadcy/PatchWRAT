@@ -1,0 +1,940 @@
+﻿\clearpage
+\section*{Appendix B: Supplementary Performance Visualizations (w/pwsa.v8.0)}
+\label{app:plots_old}
+
+This appendix contains the complete set of visualization results generated during the development of \texttt{pwsa.v8.0}. These plots validate the spectral decomposition, attention routing, and forecasting fidelity of the architecture across all tested horizons.
+
+\subsection*{B.1 Attention Analysis (w/pwsa.v8.0)}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/attention/H192_tau_bar.png}
+        \caption{H192 tau bar.png w/pwsa.v8.0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/attention/H192_wrat_attn.png}
+        \caption{H192 wrat attn.png w/pwsa.v8.0}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/attention/H336_tau_bar.png}
+        \caption{H336 tau bar.png w/pwsa.v8.0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/attention/H336_wrat_attn.png}
+        \caption{H336 wrat attn.png w/pwsa.v8.0}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/attention/H720_tau_bar.png}
+        \caption{H720 tau bar.png w/pwsa.v8.0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/attention/H720_wrat_attn.png}
+        \caption{H720 wrat attn.png w/pwsa.v8.0}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/attention/H96_tau_bar.png}
+        \caption{H96 tau bar.png w/pwsa.v8.0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/attention/H96_wrat_attn.png}
+        \caption{H96 wrat attn.png w/pwsa.v8.0}
+    \end{subfigure}
+\end{figure}
+\clearpage
+\subsection*{B.2 Benchmarking Benchmarks (w/pwsa.v8.0)}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/benchmarks/H192_spectral.png}
+        \caption{H192 spectral.png w/pwsa.v8.0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/benchmarks/H336_spectral.png}
+        \caption{H336 spectral.png w/pwsa.v8.0}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/benchmarks/H720_spectral.png}
+        \caption{H720 spectral.png w/pwsa.v8.0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/benchmarks/H96_spectral.png}
+        \caption{H96 spectral.png w/pwsa.v8.0}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/benchmarks/all_horizons_summary.png}
+        \caption{all horizons summary.png w/pwsa.v8.0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/benchmarks/final_mae_bar.png}
+        \caption{final mae bar.png w/pwsa.v8.0}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/benchmarks/final_mse_bar.png}
+        \caption{final mse bar.png w/pwsa.v8.0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/benchmarks/sota_comparison.png}
+        \caption{sota comparison.png w/pwsa.v8.0}
+    \end{subfigure}
+\end{figure}
+\clearpage
+\subsection*{B.3 Filter Dynamics (w/pwsa.v8.0)}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/filters/H192_dwt_filters.png}
+        \caption{H192 dwt filters.png w/pwsa.v8.0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/filters/H192_filter_evolution.png}
+        \caption{H192 filter evolution.png w/pwsa.v8.0}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/filters/H192_filter_spectrum.png}
+        \caption{H192 filter spectrum.png w/pwsa.v8.0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/filters/H192_filter_stats.png}
+        \caption{H192 filter stats.png w/pwsa.v8.0}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/filters/H336_dwt_filters.png}
+        \caption{H336 dwt filters.png w/pwsa.v8.0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/filters/H336_filter_evolution.png}
+        \caption{H336 filter evolution.png w/pwsa.v8.0}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/filters/H336_filter_spectrum.png}
+        \caption{H336 filter spectrum.png w/pwsa.v8.0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/filters/H336_filter_stats.png}
+        \caption{H336 filter stats.png w/pwsa.v8.0}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/filters/H720_dwt_filters.png}
+        \caption{H720 dwt filters.png w/pwsa.v8.0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/filters/H720_filter_evolution.png}
+        \caption{H720 filter evolution.png w/pwsa.v8.0}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/filters/H720_filter_spectrum.png}
+        \caption{H720 filter spectrum.png w/pwsa.v8.0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/filters/H720_filter_stats.png}
+        \caption{H720 filter stats.png w/pwsa.v8.0}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/filters/H96_dwt_filters.png}
+        \caption{H96 dwt filters.png w/pwsa.v8.0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/filters/H96_filter_evolution.png}
+        \caption{H96 filter evolution.png w/pwsa.v8.0}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/filters/H96_filter_spectrum.png}
+        \caption{H96 filter spectrum.png w/pwsa.v8.0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/filters/H96_filter_stats.png}
+        \caption{H96 filter stats.png w/pwsa.v8.0}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{../report/plots-old/filters/all_horizons_filter_norms.png}
+    \caption{all horizons filter norms.png w/pwsa.v8.0}
+\end{figure}
+\clearpage
+\subsection*{B.4 Learning Trajectories (w/pwsa.v8.0)}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/learning_curves/H192_curves.png}
+        \caption{H192 curves.png w/pwsa.v8.0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/learning_curves/H336_curves.png}
+        \caption{H336 curves.png w/pwsa.v8.0}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/learning_curves/H720_curves.png}
+        \caption{H720 curves.png w/pwsa.v8.0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/learning_curves/H96_curves.png}
+        \caption{H96 curves.png w/pwsa.v8.0}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{../report/plots-old/learning_curves/all_horizons_summary.png}
+    \caption{all horizons summary.png w/pwsa.v8.0}
+\end{figure}
+\clearpage
+\subsection*{B.5 Graph Topological Analysis (w/pwsa.v8.0)}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/variate_graph/H192_adjacency.png}
+        \caption{H192 adjacency.png w/pwsa.v8.0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/variate_graph/H192_variate_attn.png}
+        \caption{H192 variate attn.png w/pwsa.v8.0}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/variate_graph/H336_adjacency.png}
+        \caption{H336 adjacency.png w/pwsa.v8.0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/variate_graph/H336_variate_attn.png}
+        \caption{H336 variate attn.png w/pwsa.v8.0}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/variate_graph/H720_adjacency.png}
+        \caption{H720 adjacency.png w/pwsa.v8.0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/variate_graph/H720_variate_attn.png}
+        \caption{H720 variate attn.png w/pwsa.v8.0}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/variate_graph/H96_adjacency.png}
+        \caption{H96 adjacency.png w/pwsa.v8.0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/variate_graph/H96_variate_attn.png}
+        \caption{H96 variate attn.png w/pwsa.v8.0}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{../report/plots-old/variate_graph/correlation_vs_learned.png}
+    \caption{correlation vs learned.png w/pwsa.v8.0}
+\end{figure}
+\clearpage
+\subsection*{B.6 Comprehensive Multivariate Predictions (w/pwsa.v8.0)}
+\subsubsection*{Predictions for H96 (w/pwsa.v8.0)}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{../report/plots-old/predictions/H96/all_variates_grid.png}
+    \caption{H96 all variates grid.png w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{../report/plots-old/predictions/H96/horizon_error_profile.png}
+    \caption{H96 horizon error profile.png w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{../report/plots-old/predictions/H96/residuals.png}
+    \caption{H96 residuals.png w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H96/variate_0_HUFL_sample0.png}
+        \caption{variate 0 HUFL sample0.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H96/variate_0_HUFL_sample1.png}
+        \caption{variate 0 HUFL sample1.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H96/variate_0_HUFL_sample2.png}
+        \caption{variate 0 HUFL sample2.png w/pwsa.v8.0}
+    \end{subfigure}
+    \caption{Multivariate predictions for variate_0_HUFL at horizon H96 w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H96/variate_1_HULL_sample0.png}
+        \caption{variate 1 HULL sample0.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H96/variate_1_HULL_sample1.png}
+        \caption{variate 1 HULL sample1.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H96/variate_1_HULL_sample2.png}
+        \caption{variate 1 HULL sample2.png w/pwsa.v8.0}
+    \end{subfigure}
+    \caption{Multivariate predictions for variate_1_HULL at horizon H96 w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H96/variate_2_MUFL_sample0.png}
+        \caption{variate 2 MUFL sample0.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H96/variate_2_MUFL_sample1.png}
+        \caption{variate 2 MUFL sample1.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H96/variate_2_MUFL_sample2.png}
+        \caption{variate 2 MUFL sample2.png w/pwsa.v8.0}
+    \end{subfigure}
+    \caption{Multivariate predictions for variate_2_MUFL at horizon H96 w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H96/variate_3_MULL_sample0.png}
+        \caption{variate 3 MULL sample0.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H96/variate_3_MULL_sample1.png}
+        \caption{variate 3 MULL sample1.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H96/variate_3_MULL_sample2.png}
+        \caption{variate 3 MULL sample2.png w/pwsa.v8.0}
+    \end{subfigure}
+    \caption{Multivariate predictions for variate_3_MULL at horizon H96 w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H96/variate_4_LUFL_sample0.png}
+        \caption{variate 4 LUFL sample0.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H96/variate_4_LUFL_sample1.png}
+        \caption{variate 4 LUFL sample1.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H96/variate_4_LUFL_sample2.png}
+        \caption{variate 4 LUFL sample2.png w/pwsa.v8.0}
+    \end{subfigure}
+    \caption{Multivariate predictions for variate_4_LUFL at horizon H96 w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H96/variate_5_LULL_sample0.png}
+        \caption{variate 5 LULL sample0.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H96/variate_5_LULL_sample1.png}
+        \caption{variate 5 LULL sample1.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H96/variate_5_LULL_sample2.png}
+        \caption{variate 5 LULL sample2.png w/pwsa.v8.0}
+    \end{subfigure}
+    \caption{Multivariate predictions for variate_5_LULL at horizon H96 w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H96/variate_6_OT_sample0.png}
+        \caption{variate 6 OT sample0.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H96/variate_6_OT_sample1.png}
+        \caption{variate 6 OT sample1.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H96/variate_6_OT_sample2.png}
+        \caption{variate 6 OT sample2.png w/pwsa.v8.0}
+    \end{subfigure}
+    \caption{Multivariate predictions for variate_6_OT at horizon H96 w/pwsa.v8.0}
+\end{figure}
+\clearpage
+\subsubsection*{Predictions for H192 (w/pwsa.v8.0)}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{../report/plots-old/predictions/H192/all_variates_grid.png}
+    \caption{H192 all variates grid.png w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{../report/plots-old/predictions/H192/horizon_error_profile.png}
+    \caption{H192 horizon error profile.png w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{../report/plots-old/predictions/H192/residuals.png}
+    \caption{H192 residuals.png w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H192/variate_0_HUFL_sample0.png}
+        \caption{variate 0 HUFL sample0.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H192/variate_0_HUFL_sample1.png}
+        \caption{variate 0 HUFL sample1.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H192/variate_0_HUFL_sample2.png}
+        \caption{variate 0 HUFL sample2.png w/pwsa.v8.0}
+    \end{subfigure}
+    \caption{Multivariate predictions for variate_0_HUFL at horizon H192 w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H192/variate_1_HULL_sample0.png}
+        \caption{variate 1 HULL sample0.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H192/variate_1_HULL_sample1.png}
+        \caption{variate 1 HULL sample1.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H192/variate_1_HULL_sample2.png}
+        \caption{variate 1 HULL sample2.png w/pwsa.v8.0}
+    \end{subfigure}
+    \caption{Multivariate predictions for variate_1_HULL at horizon H192 w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H192/variate_2_MUFL_sample0.png}
+        \caption{variate 2 MUFL sample0.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H192/variate_2_MUFL_sample1.png}
+        \caption{variate 2 MUFL sample1.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H192/variate_2_MUFL_sample2.png}
+        \caption{variate 2 MUFL sample2.png w/pwsa.v8.0}
+    \end{subfigure}
+    \caption{Multivariate predictions for variate_2_MUFL at horizon H192 w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H192/variate_3_MULL_sample0.png}
+        \caption{variate 3 MULL sample0.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H192/variate_3_MULL_sample1.png}
+        \caption{variate 3 MULL sample1.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H192/variate_3_MULL_sample2.png}
+        \caption{variate 3 MULL sample2.png w/pwsa.v8.0}
+    \end{subfigure}
+    \caption{Multivariate predictions for variate_3_MULL at horizon H192 w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H192/variate_4_LUFL_sample0.png}
+        \caption{variate 4 LUFL sample0.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H192/variate_4_LUFL_sample1.png}
+        \caption{variate 4 LUFL sample1.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H192/variate_4_LUFL_sample2.png}
+        \caption{variate 4 LUFL sample2.png w/pwsa.v8.0}
+    \end{subfigure}
+    \caption{Multivariate predictions for variate_4_LUFL at horizon H192 w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H192/variate_5_LULL_sample0.png}
+        \caption{variate 5 LULL sample0.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H192/variate_5_LULL_sample1.png}
+        \caption{variate 5 LULL sample1.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H192/variate_5_LULL_sample2.png}
+        \caption{variate 5 LULL sample2.png w/pwsa.v8.0}
+    \end{subfigure}
+    \caption{Multivariate predictions for variate_5_LULL at horizon H192 w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H192/variate_6_OT_sample0.png}
+        \caption{variate 6 OT sample0.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H192/variate_6_OT_sample1.png}
+        \caption{variate 6 OT sample1.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H192/variate_6_OT_sample2.png}
+        \caption{variate 6 OT sample2.png w/pwsa.v8.0}
+    \end{subfigure}
+    \caption{Multivariate predictions for variate_6_OT at horizon H192 w/pwsa.v8.0}
+\end{figure}
+\clearpage
+\subsubsection*{Predictions for H336 (w/pwsa.v8.0)}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{../report/plots-old/predictions/H336/all_variates_grid.png}
+    \caption{H336 all variates grid.png w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{../report/plots-old/predictions/H336/horizon_error_profile.png}
+    \caption{H336 horizon error profile.png w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{../report/plots-old/predictions/H336/residuals.png}
+    \caption{H336 residuals.png w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H336/variate_0_HUFL_sample0.png}
+        \caption{variate 0 HUFL sample0.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H336/variate_0_HUFL_sample1.png}
+        \caption{variate 0 HUFL sample1.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H336/variate_0_HUFL_sample2.png}
+        \caption{variate 0 HUFL sample2.png w/pwsa.v8.0}
+    \end{subfigure}
+    \caption{Multivariate predictions for variate_0_HUFL at horizon H336 w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H336/variate_1_HULL_sample0.png}
+        \caption{variate 1 HULL sample0.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H336/variate_1_HULL_sample1.png}
+        \caption{variate 1 HULL sample1.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H336/variate_1_HULL_sample2.png}
+        \caption{variate 1 HULL sample2.png w/pwsa.v8.0}
+    \end{subfigure}
+    \caption{Multivariate predictions for variate_1_HULL at horizon H336 w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H336/variate_2_MUFL_sample0.png}
+        \caption{variate 2 MUFL sample0.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H336/variate_2_MUFL_sample1.png}
+        \caption{variate 2 MUFL sample1.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H336/variate_2_MUFL_sample2.png}
+        \caption{variate 2 MUFL sample2.png w/pwsa.v8.0}
+    \end{subfigure}
+    \caption{Multivariate predictions for variate_2_MUFL at horizon H336 w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H336/variate_3_MULL_sample0.png}
+        \caption{variate 3 MULL sample0.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H336/variate_3_MULL_sample1.png}
+        \caption{variate 3 MULL sample1.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H336/variate_3_MULL_sample2.png}
+        \caption{variate 3 MULL sample2.png w/pwsa.v8.0}
+    \end{subfigure}
+    \caption{Multivariate predictions for variate_3_MULL at horizon H336 w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H336/variate_4_LUFL_sample0.png}
+        \caption{variate 4 LUFL sample0.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H336/variate_4_LUFL_sample1.png}
+        \caption{variate 4 LUFL sample1.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H336/variate_4_LUFL_sample2.png}
+        \caption{variate 4 LUFL sample2.png w/pwsa.v8.0}
+    \end{subfigure}
+    \caption{Multivariate predictions for variate_4_LUFL at horizon H336 w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H336/variate_5_LULL_sample0.png}
+        \caption{variate 5 LULL sample0.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H336/variate_5_LULL_sample1.png}
+        \caption{variate 5 LULL sample1.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H336/variate_5_LULL_sample2.png}
+        \caption{variate 5 LULL sample2.png w/pwsa.v8.0}
+    \end{subfigure}
+    \caption{Multivariate predictions for variate_5_LULL at horizon H336 w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H336/variate_6_OT_sample0.png}
+        \caption{variate 6 OT sample0.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H336/variate_6_OT_sample1.png}
+        \caption{variate 6 OT sample1.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H336/variate_6_OT_sample2.png}
+        \caption{variate 6 OT sample2.png w/pwsa.v8.0}
+    \end{subfigure}
+    \caption{Multivariate predictions for variate_6_OT at horizon H336 w/pwsa.v8.0}
+\end{figure}
+\clearpage
+\subsubsection*{Predictions for H720 (w/pwsa.v8.0)}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{../report/plots-old/predictions/H720/all_variates_grid.png}
+    \caption{H720 all variates grid.png w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{../report/plots-old/predictions/H720/horizon_error_profile.png}
+    \caption{H720 horizon error profile.png w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{../report/plots-old/predictions/H720/residuals.png}
+    \caption{H720 residuals.png w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H720/variate_0_HUFL_sample0.png}
+        \caption{variate 0 HUFL sample0.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H720/variate_0_HUFL_sample1.png}
+        \caption{variate 0 HUFL sample1.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H720/variate_0_HUFL_sample2.png}
+        \caption{variate 0 HUFL sample2.png w/pwsa.v8.0}
+    \end{subfigure}
+    \caption{Multivariate predictions for variate_0_HUFL at horizon H720 w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H720/variate_1_HULL_sample0.png}
+        \caption{variate 1 HULL sample0.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H720/variate_1_HULL_sample1.png}
+        \caption{variate 1 HULL sample1.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H720/variate_1_HULL_sample2.png}
+        \caption{variate 1 HULL sample2.png w/pwsa.v8.0}
+    \end{subfigure}
+    \caption{Multivariate predictions for variate_1_HULL at horizon H720 w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H720/variate_2_MUFL_sample0.png}
+        \caption{variate 2 MUFL sample0.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H720/variate_2_MUFL_sample1.png}
+        \caption{variate 2 MUFL sample1.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H720/variate_2_MUFL_sample2.png}
+        \caption{variate 2 MUFL sample2.png w/pwsa.v8.0}
+    \end{subfigure}
+    \caption{Multivariate predictions for variate_2_MUFL at horizon H720 w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H720/variate_3_MULL_sample0.png}
+        \caption{variate 3 MULL sample0.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H720/variate_3_MULL_sample1.png}
+        \caption{variate 3 MULL sample1.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H720/variate_3_MULL_sample2.png}
+        \caption{variate 3 MULL sample2.png w/pwsa.v8.0}
+    \end{subfigure}
+    \caption{Multivariate predictions for variate_3_MULL at horizon H720 w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H720/variate_4_LUFL_sample0.png}
+        \caption{variate 4 LUFL sample0.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H720/variate_4_LUFL_sample1.png}
+        \caption{variate 4 LUFL sample1.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H720/variate_4_LUFL_sample2.png}
+        \caption{variate 4 LUFL sample2.png w/pwsa.v8.0}
+    \end{subfigure}
+    \caption{Multivariate predictions for variate_4_LUFL at horizon H720 w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H720/variate_5_LULL_sample0.png}
+        \caption{variate 5 LULL sample0.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H720/variate_5_LULL_sample1.png}
+        \caption{variate 5 LULL sample1.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H720/variate_5_LULL_sample2.png}
+        \caption{variate 5 LULL sample2.png w/pwsa.v8.0}
+    \end{subfigure}
+    \caption{Multivariate predictions for variate_5_LULL at horizon H720 w/pwsa.v8.0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H720/variate_6_OT_sample0.png}
+        \caption{variate 6 OT sample0.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H720/variate_6_OT_sample1.png}
+        \caption{variate 6 OT sample1.png w/pwsa.v8.0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../report/plots-old/predictions/H720/variate_6_OT_sample2.png}
+        \caption{variate 6 OT sample2.png w/pwsa.v8.0}
+    \end{subfigure}
+    \caption{Multivariate predictions for variate_6_OT at horizon H720 w/pwsa.v8.0}
+\end{figure}
+\clearpage

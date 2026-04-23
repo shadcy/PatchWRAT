@@ -1,0 +1,571 @@
+Device: cuda | Horizons: [96, 192, 336, 720]
+Epochs: 40 | Patience: 10 | Seq_Len: 336
+
+
+=======================================================
+ HORIZON = 96
+=======================================================
+ Parameters: 2,181,349
+
+  Ep | Val MSE (Learnable) | Val MSE (Fixed)
+ ---------------------------------------------
+   1 |    0.05482          |    0.05447
+   2 |    0.05773          |    0.05615
+   3 |    0.05514          |    0.05770
+   4 |    0.06179          |    0.05577
+   5 |    0.05756          |    0.06280
+   6 |    0.06026          |    0.05821
+   7 |    0.06265          |    0.05656
+   8 |    0.05921          |    0.05979
+   9 |    0.05947          |    0.06755
+  10 |    0.06632          |    0.06483
+  11 |    0.06697          |    0.06703
+ Both models reached early stopping.
+
+ TEST RESULTS (Horizon 96):
+ PatchWRAT (Learnable) -> MAE: 0.1406 | MSE: 0.0352 | DirAcc: 43.66%
+ PatchWRAT (Fixed)     -> MAE: 0.1356 | MSE: 0.0339 | DirAcc: 43.70%
+
+=======================================================
+ HORIZON = 192
+=======================================================
+  Ep | Val MSE (Learnable) | Val MSE (Fixed)
+ ---------------------------------------------
+   1 |    0.08456          |    0.08374
+   2 |    0.07923          |    0.08440
+   3 |    0.08610          |    0.08325
+   4 |    0.08754          |    0.08164
+   5 |    0.08082          |    0.08596
+   6 |    0.09045          |    0.08504
+   7 |    0.08575          |    0.09798
+   8 |    0.09180          |    0.09827
+   9 |    0.10251          |    0.10480
+  10 |    0.09950          |    0.10210
+  11 |    0.09780          |    0.11379
+  12 |    0.11858          |    0.12171
+  13 |    0.07923          |    0.12738
+  14 |    0.07923          |    0.11808
+ Both models reached early stopping.
+
+ TEST RESULTS (Horizon 192):
+ PatchWRAT (Learnable) -> MAE: 0.1791 | MSE: 0.0550 | DirAcc: 43.80%
+ PatchWRAT (Fixed)     -> MAE: 0.1783 | MSE: 0.0557 | DirAcc: 44.28%
+
+=======================================================
+ HORIZON = 336
+=======================================================
+  Ep | Val MSE (Learnable) | Val MSE (Fixed)
+ ---------------------------------------------
+   1 |    0.11416          |    0.10431
+   2 |    0.11211          |    0.10170
+   3 |    0.11266          |    0.10697
+   4 |    0.11606          |    0.10062
+   5 |    0.12669          |    0.12213
+   6 |    0.12385          |    0.10649
+   7 |    0.13131          |    0.11649
+   8 |    0.14662          |    0.11391
+   9 |    0.14572          |    0.13622
+  10 |    0.14074          |    0.12209
+  11 |    0.15656          |    0.14374
+  12 |    0.15632          |    0.15455
+  13 |    0.11211          |    0.15227
+  14 |    0.11211          |    0.14320
+ Both models reached early stopping.
+
+ TEST RESULTS (Horizon 336):
+ PatchWRAT (Learnable) -> MAE: 0.2074 | MSE: 0.0752 | DirAcc: 43.78%
+ PatchWRAT (Fixed)     -> MAE: 0.2108 | MSE: 0.0784 | DirAcc: 43.90%
+
+=======================================================
+ HORIZON = 720
+=======================================================
+  Ep | Val MSE (Learnable) | Val MSE (Fixed)
+ ---------------------------------------------
+   1 |    0.12772          |    0.12753
+   2 |    0.12040          |    0.13179
+   3 |    0.12916          |    0.12487
+   4 |    0.13485          |    0.14003
+   5 |    0.12862          |    0.14024
+   6 |    0.13549          |    0.15671
+   7 |    0.16011          |    0.15846
+   8 |    0.15012          |    0.16977
+   9 |    0.17139          |    0.16565
+  10 |    0.19327          |    0.16561
+  11 |    0.18234          |    0.17396
+  12 |    0.20142          |    0.16870
+  13 |    0.12040          |    0.19216
+ Both models reached early stopping.
+
+ TEST RESULTS (Horizon 720):
+ PatchWRAT (Learnable) -> MAE: 0.2447 | MSE: 0.1011 | DirAcc: 43.70%
+ PatchWRAT (Fixed)     -> MAE: 0.2471 | MSE: 0.1034 | DirAcc: 44.05%
+
+Standalone PatchWRAT testing complete.
+PS C:\Users\Asus\Desktop\TTS\Rat\modified_arch> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ============================================================
+# run_patchwrat_only.py  —  Standalone PatchWRAT Benchmark
+# ============================================================
+# Single file. No modifications needed. Just run:
+#   python run_patchwrat_only.py
+#
+# Dataset : ETTm1.csv (must be in the same folder)
+# Models  : PatchWRAT (Learnable Tau) & PatchWRAT (Fixed Tau)
+# Upgrades: Extended Seq_Len, RevIN, Early Stopping
+# ============================================================
+
+import math, warnings
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+import torch.optim as optim
+import numpy as np
+import pandas as pd
+from torch.utils.data import Dataset, DataLoader
+from sklearn.preprocessing import StandardScaler
+
+warnings.filterwarnings('ignore')
+
+# ══════════════════════════════════════════════════════════════
+# SECTION 1 — WAVELET, ATTENTION & NORMALIZATION
+# ══════════════════════════════════════════════════════════════
+
+class RevIN(nn.Module):
+    """Reversible Instance Normalization to handle distribution shifts."""
+    def __init__(self, num_features, eps=1e-5, affine=True):
+        super().__init__()
+        self.num_features = num_features
+        self.eps = eps
+        self.affine = affine
+        if self.affine:
+            self.affine_weight = nn.Parameter(torch.ones(self.num_features))
+            self.affine_bias = nn.Parameter(torch.zeros(self.num_features))
+
+    def forward(self, x, mode):
+        if mode == 'norm':
+            self._get_statistics(x)
+            x = self._normalize(x)
+        elif mode == 'denorm':
+            x = self._denormalize(x)
+        return x
+
+    def _get_statistics(self, x):
+        self.mean = torch.mean(x, dim=-1, keepdim=True).detach()
+        self.stdev = torch.sqrt(torch.var(x, dim=-1, keepdim=True, unbiased=False) + self.eps).detach()
+
+    def _normalize(self, x):
+        x = x - self.mean
+        x = x / self.stdev
+        if self.affine:
+            x = x * self.affine_weight.unsqueeze(-1) + self.affine_bias.unsqueeze(-1)
+        return x
+
+    def _denormalize(self, x):
+        if self.affine:
+            x = (x - self.affine_bias.unsqueeze(-1)) / (self.affine_weight.unsqueeze(-1) + self.eps**2)
+        x = x * self.stdev
+        x = x + self.mean
+        return x
+
+
+class LearnableDWT1D(nn.Module):
+    def __init__(self, in_channels, out_channels, filter_length=4):
+        super().__init__()
+        self.h = nn.Parameter(torch.randn(out_channels, in_channels, filter_length) * 0.1)
+        self.g = nn.Parameter(torch.randn(out_channels, in_channels, filter_length) * 0.1)
+        self.filter_length = filter_length
+        self.padding_val = (filter_length - 2) // 2
+        with torch.no_grad():
+            self.g -= self.g.mean(dim=-1, keepdim=True)
+
+    def forward(self, x):
+        LL = F.conv1d(x, self.h, stride=2, padding=self.padding_val)
+        LH = F.conv1d(x, self.g, stride=2, padding=self.padding_val)
+        return LL, LH
+
+    def inverse(self, LL, LH):
+        x_recon_L = F.conv_transpose1d(LL, self.h, stride=2, padding=self.padding_val)
+        x_recon_H = F.conv_transpose1d(LH, self.g, stride=2, padding=self.padding_val)
+        min_len = min(x_recon_L.shape[-1], x_recon_H.shape[-1])
+        return x_recon_L[..., :min_len] + x_recon_H[..., :min_len]
+
+
+class FrequencySparseAttention(nn.Module):
+    def __init__(self, d_model, num_heads, threshold=0.1):
+        super().__init__()
+        self.num_heads = num_heads
+        self.d_model   = d_model
+        self.threshold = threshold
+        self.q_proj   = nn.Linear(d_model, d_model)
+        self.k_proj   = nn.Linear(d_model, d_model)
+        self.v_proj   = nn.Linear(d_model, d_model)
+        self.out_proj = nn.Linear(d_model, d_model)
+
+    def forward(self, q_x, k_x, v_x, energy_coeffs=None):
+        B, L, D = q_x.shape
+        H   = self.num_heads
+        D_h = D // H
+        Q = self.q_proj(q_x).view(B, L, H, D_h).transpose(1, 2)
+        K = self.k_proj(k_x).view(B, -1, H, D_h).transpose(1, 2)
+        V = self.v_proj(v_x).view(B, -1, H, D_h).transpose(1, 2)
+        scores = torch.matmul(Q, K.transpose(-2, -1)) / (D_h ** 0.5)
+        
+        if energy_coeffs is not None:
+            energy = torch.abs(energy_coeffs).mean(dim=-1)
+            mask   = energy > self.threshold
+            mask   = mask.view(B, 1, 1, -1)
+            scores = scores.masked_fill(~mask, float('-inf'))
+            
+        attn_weights = F.softmax(scores, dim=-1)
+        attn_weights = torch.nan_to_num(attn_weights, nan=0.0)
+        out = torch.matmul(attn_weights, V)
+        out = out.transpose(1, 2).contiguous().view(B, L, D)
+        return self.out_proj(out)
+
+
+class WRATBlock(nn.Module):
+    def __init__(self, d_model, num_heads, sparsity_tau=0.1):
+        super().__init__()
+        self.intra_LL_attn  = FrequencySparseAttention(d_model, num_heads)
+        self.intra_LH_attn  = FrequencySparseAttention(d_model, num_heads, threshold=sparsity_tau)
+        self.cross_attn     = FrequencySparseAttention(d_model, num_heads)
+        self.mlp_LL = nn.Sequential(nn.Linear(d_model, d_model*4), nn.GELU(), nn.Linear(d_model*4, d_model))
+        self.mlp_LH = nn.Sequential(nn.Linear(d_model, d_model*4), nn.GELU(), nn.Linear(d_model*4, d_model))
+        self.norm1  = nn.LayerNorm(d_model)
+        self.norm2  = nn.LayerNorm(d_model)
+
+    def forward(self, LL, LH):
+        LL_seq = LL.transpose(1, 2)
+        LH_seq = LH.transpose(1, 2)
+        LL_out    = self.intra_LL_attn(LL_seq, LL_seq, LL_seq)
+        LH_out    = self.intra_LH_attn(LH_seq, LH_seq, LH_seq, energy_coeffs=LH_seq)
+        cross_out = self.cross_attn(LL_out, LH_out, LH_out)
+        LL_fused  = self.norm1(LL_seq + LL_out + cross_out)
+        LH_fused  = self.norm2(LH_seq + LH_out)
+        LL_final  = self.mlp_LL(LL_fused) + LL_fused
+        LH_final  = self.mlp_LH(LH_fused) + LH_fused
+        return LL_final.transpose(1, 2), LH_final.transpose(1, 2)
+
+
+class LearnableTauWRATBlock(nn.Module):
+    def __init__(self, d_model, num_heads, tau_init=0.1):
+        super().__init__()
+        self.raw_tau = nn.Parameter(torch.tensor(math.log(tau_init / (1.0 - tau_init))))
+        self._block  = WRATBlock(d_model, num_heads, sparsity_tau=tau_init)
+
+    @property
+    def tau(self): return torch.sigmoid(self.raw_tau).item()
+
+    def forward(self, LL, LH):
+        self._block.intra_LH_attn.threshold = torch.sigmoid(self.raw_tau).item()
+        return self._block(LL, LH)
+
+
+# ══════════════════════════════════════════════════════════════
+# SECTION 2 — THE NEW PATCH-WRAT ARCHITECTURE (WITH REVIN)
+# ══════════════════════════════════════════════════════════════
+
+class PatchWRAT(nn.Module):
+    def __init__(self, seq_len, pred_len, d_model=64, num_heads=4, tau_init=0.1, tau_type='learnable'):
+        super().__init__()
+        self.seq_len = seq_len
+        self.pred_len = pred_len
+        
+        # 0. Reversible Instance Normalization
+        self.revin = RevIN(num_features=1)
+        
+        # 1. Wavelet Extractor
+        self.dwt = LearnableDWT1D(1, d_model)
+        
+        # 2. Attention Processor
+        if tau_type == 'learnable':
+            self.wrat_block = LearnableTauWRATBlock(d_model, num_heads, tau_init)
+        else:
+            self.wrat_block = WRATBlock(d_model, num_heads, sparsity_tau=tau_init)
+            
+        # 3. Head A: Direct Forecasting Head
+        self.l_half = seq_len // 2
+        self.flatten_dim = self.l_half * d_model * 2  
+        
+        self.forecast_head = nn.Sequential(
+            nn.Flatten(start_dim=1),
+            nn.Dropout(0.1),
+            nn.Linear(self.flatten_dim, pred_len)
+        )
+        
+        # 4. Head B: Auxiliary Reconstruction Head
+        self.sc = nn.Conv1d(1, 1, kernel_size=1)
+
+    def forward(self, x, zero_lh=False):
+        # x shape: (Batch, 1, Seq_Len)
+        
+        # Normalize instance before DWT
+        x_norm = self.revin(x, mode='norm')
+        
+        LL, LH = self.dwt(x_norm)
+        if zero_lh: LH = torch.zeros_like(LH)
+        LL_out, LH_out = self.wrat_block(LL, LH)
+        
+        # --- HEAD A: FORECAST ---
+        fused = torch.cat([LL_out, LH_out], dim=1) 
+        preds = self.forecast_head(fused).unsqueeze(1) # (B, 1, pred_len)
+        
+        # Denormalize forecast back to original scale
+        preds = self.revin(preds, mode='denorm')
+        
+        # --- HEAD B: RECONSTRUCTION ---
+        x_recon = self.dwt.inverse(LL_out, LH_out)
+        x_recon = self.sc(x_recon)
+        
+        # Denormalize reconstruction so loss compares to raw x
+        x_recon = self.revin(x_recon, mode='denorm')
+        
+        return preds, x_recon, LL, LH
+
+
+class DualHeadWRATLoss(nn.Module):
+    def __init__(self, lambda_recon=1.0, lambda_ortho=0.1):
+        super().__init__()
+        self.lambda_recon = lambda_recon
+        self.lambda_ortho = lambda_ortho
+
+    def forward(self, preds, targets, x_orig, x_recon, dwt_layer):
+        task_loss = F.mse_loss(preds, targets)
+        
+        min_len = min(x_orig.shape[-1], x_recon.shape[-1])
+        recon_loss = F.mse_loss(x_recon[..., :min_len], x_orig[..., :min_len])
+        
+        h_flat = dwt_layer.h.view(dwt_layer.h.shape[0], -1)
+        g_flat = dwt_layer.g.view(dwt_layer.g.shape[0], -1)
+        ortho_loss = (h_flat * g_flat).sum().abs()
+        
+        total = task_loss + self.lambda_recon * recon_loss + self.lambda_ortho * ortho_loss
+        return total, task_loss
+
+
+class EarlyStopping:
+    """Stops training if validation loss doesn't improve after a given patience."""
+    def __init__(self, patience=10):
+        self.patience = patience
+        self.counter = 0
+        self.best_loss = None
+        self.early_stop = False
+        self.best_state = None
+
+    def __call__(self, val_loss, model):
+        if self.best_loss is None:
+            self.best_loss = val_loss
+            self.best_state = {k: v.cpu().clone() for k, v in model.state_dict().items()}
+        elif val_loss > self.best_loss:
+            self.counter += 1
+            if self.counter >= self.patience:
+                self.early_stop = True
+        else:
+            self.best_loss = val_loss
+            self.best_state = {k: v.cpu().clone() for k, v in model.state_dict().items()}
+            self.counter = 0
+
+# ══════════════════════════════════════════════════════════════
+# SECTION 3 — DATASET & EVALUATION
+# ══════════════════════════════════════════════════════════════
+
+class ETTDataset(Dataset):
+    def __init__(self, seq_len, pred_len, split='train', file_path=r'C:\Users\Asus\Desktop\TTS\WRAT\ETTm1.csv'):
+        self.seq_len, self.pred_len = seq_len, pred_len
+        df = pd.read_csv(file_path)
+        data = df['OT'].values.reshape(-1, 1)
+        
+        train_end = 12 * 30 * 24 * 4
+        val_end   = train_end + 4 * 30 * 24 * 4
+        raw = {'train': data[:train_end], 'val': data[train_end:val_end], 'test': data[val_end:]}[split]
+        
+        self.scaler = StandardScaler()
+        self.scaler.fit(data[:train_end])
+        self.data = torch.tensor(self.scaler.transform(raw), dtype=torch.float32)
+
+    def inverse(self, x_norm): 
+        return x_norm * self.scaler.scale_[0] + self.scaler.mean_[0]
+
+    def __len__(self): 
+        return max(0, len(self.data) - self.seq_len - self.pred_len)
+
+    def __getitem__(self, idx):
+        x = self.data[idx : idx + self.seq_len]
+        y = self.data[idx + self.seq_len : idx + self.seq_len + self.pred_len]
+        return x.t(), y.t()
+
+
+def evaluate(model, loader, device, inv_fn=None):
+    model.eval()
+    all_p, all_t = [], []
+    with torch.no_grad():
+        for bx, by in loader:
+            bx, by = bx.to(device), by.to(device)
+            preds, _, _, _ = model(bx)
+            all_p.append(preds.cpu())
+            all_t.append(by.cpu())
+            
+    p, t = torch.cat(all_p, 0).flatten().numpy(), torch.cat(all_t, 0).flatten().numpy()
+    err = p - t
+    mae, mse = float(np.abs(err).mean()), float((err**2).mean())
+    dir_acc = float((np.sign(np.diff(p)) == np.sign(np.diff(t))).mean() * 100)
+    model.train()
+    return dict(mae=mae, mse=mse, dir_acc=dir_acc)
+
+
+def train_patchwrat(model, opt, crit, loader, tau_override=None, zero_lh=False):
+    model.train()
+    if tau_override is not None and hasattr(model.wrat_block, 'sparsity_tau'):
+        model.wrat_block.sparsity_tau = tau_override
+        
+    total_loss, n = 0, 0
+    for bx, by in loader:
+        bx, by = bx.to(DEVICE), by.to(DEVICE)
+        opt.zero_grad()
+        
+        preds, x_recon, _, _ = model(bx, zero_lh=zero_lh)
+        loss, _ = crit(preds, by, bx, x_recon, model.dwt)
+        
+        loss.backward()
+        torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
+        opt.step()
+        total_loss += loss.item()
+        n += 1
+        
+    return total_loss / n
+
+
+# ══════════════════════════════════════════════════════════════
+# SECTION 4 — CONFIG & EXECUTION LOOP
+# ══════════════════════════════════════════════════════════════
+
+DEVICE     = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+SEQ_LEN    = 336  # Increased from 96. DWT compresses this to 168 tokens!
+HORIZONS   = [96, 192, 336, 720]
+BATCH_SIZE = 64
+D_MODEL    = 64
+EPOCHS     = 40
+PATIENCE   = 10   # Early stopping patience
+LR         = 1e-3
+
+crit_wrat = DualHeadWRATLoss(lambda_recon=1.0, lambda_ortho=0.1)
+
+print(f"Device: {DEVICE} | Horizons: {HORIZONS}")
+print(f"Epochs: {EPOCHS} | Patience: {PATIENCE} | Seq_Len: {SEQ_LEN}\n")
+
+for PRED_LEN in HORIZONS:
+    print(f"\n{'='*55}\n HORIZON = {PRED_LEN} \n{'='*55}")
+    
+    train_ds = ETTDataset(SEQ_LEN, PRED_LEN, 'train')
+    val_ds   = ETTDataset(SEQ_LEN, PRED_LEN, 'val')
+    test_ds  = ETTDataset(SEQ_LEN, PRED_LEN, 'test')
+    
+    trl = DataLoader(train_ds, BATCH_SIZE, shuffle=True, drop_last=True)
+    vll = DataLoader(val_ds, BATCH_SIZE, shuffle=False, drop_last=True)
+    tel = DataLoader(test_ds, BATCH_SIZE, shuffle=False, drop_last=True)
+    
+    wrat_lrn = PatchWRAT(SEQ_LEN, PRED_LEN, D_MODEL, tau_type='learnable').to(DEVICE)
+    wrat_fix = PatchWRAT(SEQ_LEN, PRED_LEN, D_MODEL, tau_type='fixed', tau_init=0.1).to(DEVICE)
+    
+    opt_lrn = optim.AdamW(wrat_lrn.parameters(), lr=LR)
+    opt_fix = optim.AdamW(wrat_fix.parameters(), lr=LR)
+    
+    early_stop_lrn = EarlyStopping(patience=PATIENCE)
+    early_stop_fix = EarlyStopping(patience=PATIENCE)
+    
+    if PRED_LEN == HORIZONS[0]:
+        params = sum(p.numel() for p in wrat_lrn.parameters())
+        print(f" Parameters: {params:,}\n")
+    
+    print(f" {'Ep':>3} | {'Val MSE (Learnable)':>19} | {'Val MSE (Fixed)':>15}")
+    print(f" {'-'*45}")
+    
+    for epoch in range(1, EPOCHS+1):
+        # Only train if early stopping hasn't triggered
+        if not early_stop_lrn.early_stop:
+            train_patchwrat(wrat_lrn, opt_lrn, crit_wrat, trl)
+        if not early_stop_fix.early_stop:
+            train_patchwrat(wrat_fix, opt_fix, crit_wrat, trl)
+            
+        # Validate
+        v_lrn = evaluate(wrat_lrn, vll, DEVICE)['mse'] if not early_stop_lrn.early_stop else early_stop_lrn.best_loss
+        v_fix = evaluate(wrat_fix, vll, DEVICE)['mse'] if not early_stop_fix.early_stop else early_stop_fix.best_loss
+        
+        # Check early stopping
+        if not early_stop_lrn.early_stop: early_stop_lrn(v_lrn, wrat_lrn)
+        if not early_stop_fix.early_stop: early_stop_fix(v_fix, wrat_fix)
+        
+        # Display epoch info
+        lrn_tag = " (Stopped)" if early_stop_lrn.early_stop and epoch == early_stop_lrn.counter + early_stop_lrn.patience else ""
+        fix_tag = " (Stopped)" if early_stop_fix.early_stop and epoch == early_stop_fix.counter + early_stop_fix.patience else ""
+        print(f" {epoch:>3} | {v_lrn:>10.5f}{lrn_tag:<9} | {v_fix:>10.5f}{fix_tag:<9}")
+        
+        # Break if both have stopped
+        if early_stop_lrn.early_stop and early_stop_fix.early_stop:
+            print(" Both models reached early stopping.")
+            break
+
+    # Restore best weights before testing
+    wrat_lrn.load_state_dict(early_stop_lrn.best_state)
+    wrat_fix.load_state_dict(early_stop_fix.best_state)
+    
+    # Final Test Step
+    res_lrn = evaluate(wrat_lrn, tel, DEVICE, test_ds.inverse)
+    res_fix = evaluate(wrat_fix, tel, DEVICE, test_ds.inverse)
+    
+    print(f"\n TEST RESULTS (Horizon {PRED_LEN}):")
+    print(f" PatchWRAT (Learnable) -> MAE: {res_lrn['mae']:.4f} | MSE: {res_lrn['mse']:.4f} | DirAcc: {res_lrn['dir_acc']:.2f}%")
+    print(f" PatchWRAT (Fixed)     -> MAE: {res_fix['mae']:.4f} | MSE: {res_fix['mse']:.4f} | DirAcc: {res_fix['dir_acc']:.2f}%")
+
+print("\nStandalone PatchWRAT testing complete.")

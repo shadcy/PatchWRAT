@@ -1,0 +1,140 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand*\HyPL@Entry[1]{}
+\HyPL@Entry{0<</S/D>>}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{3}{section.1}\protected@file@percent }
+\newlabel{sec:intro}{{1}{3}{Introduction}{section.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Problem Formulation}{3}{section.2}\protected@file@percent }
+\newlabel{sec:problem}{{2}{3}{Problem Formulation}{section.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Predictions}{4}{section.3}\protected@file@percent }
+\newlabel{sec:arch}{{3}{4}{Predictions}{section.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces P-WSA v8.0 prediction-grid diagnostic at $H=96$ on the ETTm1 test set.}}{4}{figure.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:pred-overview}{{1}{4}{P-WSA v8.0 prediction-grid diagnostic at $H=96$ on the ETTm1 test set}{figure.caption.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Moving-Average Decomposition}{4}{subsection.3.1}\protected@file@percent }
+\newlabel{sec:decomp}{{3.1}{4}{Moving-Average Decomposition}{subsection.3.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Reversible Instance Normalisation (RevIN)}{5}{subsection.3.2}\protected@file@percent }
+\newlabel{sec:revin}{{3.2}{5}{Reversible Instance Normalisation (RevIN)}{subsection.3.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Patch Embedding}{5}{subsection.3.3}\protected@file@percent }
+\newlabel{sec:patch}{{3.3}{5}{Patch Embedding}{subsection.3.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Learnable Haar Wavelet Thresholding}{5}{subsection.3.4}\protected@file@percent }
+\newlabel{sec:wavelet}{{3.4}{5}{Learnable Haar Wavelet Thresholding}{subsection.3.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Patch Mixer}{6}{subsection.3.5}\protected@file@percent }
+\newlabel{sec:mixer}{{3.5}{6}{Patch Mixer}{subsection.3.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Prediction Head}{6}{subsection.3.6}\protected@file@percent }
+\newlabel{sec:head}{{3.6}{6}{Prediction Head}{subsection.3.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.7}FITS Bypass}{6}{subsection.3.7}\protected@file@percent }
+\newlabel{sec:fits}{{3.7}{6}{FITS Bypass}{subsection.3.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.8}Final Prediction Assembly}{7}{subsection.3.8}\protected@file@percent }
+\newlabel{sec:assembly}{{3.8}{7}{Final Prediction Assembly}{subsection.3.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Training}{7}{section.4}\protected@file@percent }
+\newlabel{sec:training}{{4}{7}{Training}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Loss Function}{7}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Optimiser and Schedule}{7}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Early Stopping}{7}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Data Splits and Normalisation}{8}{subsection.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Input Augmentation}{8}{subsection.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Experimental Setup}{9}{section.5}\protected@file@percent }
+\newlabel{sec:exp}{{5}{9}{Experimental Setup}{section.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Hyperparameter Configuration (P-WSA v8.0)}}{9}{table.caption.2}\protected@file@percent }
+\newlabel{tab:hparams}{{1}{9}{Hyperparameter Configuration (P-WSA v8.0)}{table.caption.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Results}{9}{section.6}\protected@file@percent }
+\newlabel{sec:results}{{6}{9}{Results}{section.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Main Results (currently empty; will be updated in final report.)}{10}{subsection.6.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Test-set results on ETTm1 across all four horizons. $\downarrow $ = lower is better; $\uparrow $ = higher is better. The ``vs iTransformer'' column reports the signed difference in MSE relative to the published iTransformer result.}}{10}{table.caption.3}\protected@file@percent }
+\newlabel{tab:main}{{2}{10}{Test-set results on ETTm1 across all four horizons. $\downarrow $ = lower is better; $\uparrow $ = higher is better. The ``vs iTransformer'' column reports the signed difference in MSE relative to the published iTransformer result}{table.caption.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Benchmark summary across all forecast horizons using the validated benchmark subfolder outputs.}}{10}{figure.caption.4}\protected@file@percent }
+\newlabel{fig:benchmarks}{{2}{10}{Benchmark summary across all forecast horizons using the validated benchmark subfolder outputs}{figure.caption.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces SOTA comparison at $H=96$ on ETTm1. P-WSA v8.0 (CI mode) compared against iTransformer, PatchTST, TimesNet, and DLinear. Note: published SOTA results use full multivariate cross-channel attention; our model uses strict channel independence.}}{11}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:sota}{{3}{11}{SOTA comparison at $H=96$ on ETTm1. P-WSA v8.0 (CI mode) compared against iTransformer, PatchTST, TimesNet, and DLinear. Note: published SOTA results use full multivariate cross-channel attention; our model uses strict channel independence}{figure.caption.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Final test-set MSE (left) and MAE (right) bar charts across all horizons.}}{11}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:bar-metrics}{{4}{11}{Final test-set MSE (left) and MAE (right) bar charts across all horizons}{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Prediction Outputs Across All Horizons}{11}{subsection.6.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Prediction-grid diagnostic at $H=96$.}}{12}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:pred-grid-96}{{5}{12}{Prediction-grid diagnostic at $H=96$}{figure.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Prediction-grid diagnostic at $H=192$.}}{13}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:pred-grid-192}{{6}{13}{Prediction-grid diagnostic at $H=192$}{figure.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Prediction-grid diagnostic at $H=336$.}}{14}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:pred-grid-336}{{7}{14}{Prediction-grid diagnostic at $H=336$}{figure.caption.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Prediction-grid diagnostic at $H=720$.}}{15}{figure.caption.10}\protected@file@percent }
+\newlabel{fig:pred-grid-720}{{8}{15}{Prediction-grid diagnostic at $H=720$}{figure.caption.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Learning Curves}{15}{subsection.6.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Training and validation MSE curves for $H \in \{96, 192, 336, 720\}$. The amber vertical line marks the best validation epoch where the checkpoint is saved.}}{16}{figure.caption.11}\protected@file@percent }
+\newlabel{fig:curves-individual}{{9}{16}{Training and validation MSE curves for $H \in \{96, 192, 336, 720\}$. The amber vertical line marks the best validation epoch where the checkpoint is saved}{figure.caption.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces All-horizon validation MSE overlay. Solid lines: validation; dashed lines: training. Longer horizons converge to higher MSE as expected. The spread between horizons increases after epoch~20, suggesting that additional training capacity is consumed by longer-range dependencies.}}{16}{figure.caption.12}\protected@file@percent }
+\newlabel{fig:curves-all}{{10}{16}{All-horizon validation MSE overlay. Solid lines: validation; dashed lines: training. Longer horizons converge to higher MSE as expected. The spread between horizons increases after epoch~20, suggesting that additional training capacity is consumed by longer-range dependencies}{figure.caption.12}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Ablation Study}{16}{section.7}\protected@file@percent }
+\newlabel{sec:ablation}{{7}{16}{Ablation Study}{section.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Ablation results at $H=96$ on ETTm1. Bold marks the best value per metric.}}{17}{table.caption.13}\protected@file@percent }
+\newlabel{tab:ablation}{{3}{17}{Ablation results at $H=96$ on ETTm1. Bold marks the best value per metric}{table.caption.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Component-Wise Effects}{17}{subsection.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.1.1}Effect of RevIN}{17}{subsubsection.7.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.1.2}Effect of Sparse Attention on High-Frequency Path}{17}{subsubsection.7.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.1.3}Effect of Orthogonality Loss}{17}{subsubsection.7.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8}Diagnostic Analysis}{17}{section.8}\protected@file@percent }
+\newlabel{sec:diagnostics}{{8}{17}{Diagnostic Analysis}{section.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Prediction Quality per Variate}{17}{subsection.8.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces All-variate prediction grid at $H=96$. Each panel corresponds to one ETTm1 variate (HUFL, HULL, MUFL, MULL, LUFL, LULL, OT).}}{18}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:all-var-96}{{11}{18}{All-variate prediction grid at $H=96$. Each panel corresponds to one ETTm1 variate (HUFL, HULL, MUFL, MULL, LUFL, LULL, OT)}{figure.caption.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces All-variate prediction grid at $H=192$.}}{19}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:all-var-192}{{12}{19}{All-variate prediction grid at $H=192$}{figure.caption.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces All-variate prediction grid at $H=336$.}}{20}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:all-var-336}{{13}{20}{All-variate prediction grid at $H=336$}{figure.caption.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces All-variate prediction grid at $H=720$.}}{21}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:all-var-720}{{14}{21}{All-variate prediction grid at $H=720$}{figure.caption.17}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Residual Diagnostics}{21}{subsection.8.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Residual diagnostics at $H=96$. Left: residual histogram; Centre: Q-Q plot against a normal reference; Right: ACF of residuals up to lag 30.}}{22}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:residuals-96}{{15}{22}{Residual diagnostics at $H=96$. Left: residual histogram; Centre: Q-Q plot against a normal reference; Right: ACF of residuals up to lag 30}{figure.caption.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Residual diagnostics at $H \in \{192, 336, 720\}$ (left-to-right, top row then bottom). The ACF structure increases with horizon length, consistent with the decay of temporal coherence.}}{22}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:residuals-others}{{16}{22}{Residual diagnostics at $H \in \{192, 336, 720\}$ (left-to-right, top row then bottom). The ACF structure increases with horizon length, consistent with the decay of temporal coherence}{figure.caption.19}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.3}Horizon Error Profile}{22}{subsection.8.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Mean absolute error at each forecast step for $H=96$. Error increases monotonically with step index as predictive information decays.}}{22}{figure.caption.20}\protected@file@percent }
+\newlabel{fig:horizon-err-96}{{17}{22}{Mean absolute error at each forecast step for $H=96$. Error increases monotonically with step index as predictive information decays}{figure.caption.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Horizon error profiles at $H \in \{192, 336, 720\}$. The gradient of the profile steepens with longer horizons, reflecting the accelerated information decay in longer-range predictions.}}{23}{figure.caption.21}\protected@file@percent }
+\newlabel{fig:horizon-err-others}{{18}{23}{Horizon error profiles at $H \in \{192, 336, 720\}$. The gradient of the profile steepens with longer horizons, reflecting the accelerated information decay in longer-range predictions}{figure.caption.21}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.4}Learned DWT Filters}{23}{subsection.8.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces $H=96$. Left: Learned low-pass and high-pass filter taps vs.\ Haar initialisation. Right: Frequency magnitude response.}}{23}{figure.caption.22}\protected@file@percent }
+\newlabel{fig:dwt-filters-96}{{19}{23}{$H=96$. Left: Learned low-pass and high-pass filter taps vs.\ Haar initialisation. Right: Frequency magnitude response}{figure.caption.22}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces $H=96$. Left: Per-tap deviation from Haar initialisation. Right: Per-channel L2 norm of learned filters.}}{23}{figure.caption.23}\protected@file@percent }
+\newlabel{fig:filter-stats-96}{{20}{23}{$H=96$. Left: Per-tap deviation from Haar initialisation. Right: Per-channel L2 norm of learned filters}{figure.caption.23}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces DWT filter analysis at $H=192$. Top row: filter taps and spectrum. Bottom row: filter evolution and per-channel norms.}}{24}{figure.caption.24}\protected@file@percent }
+\newlabel{fig:dwt-filters-192}{{21}{24}{DWT filter analysis at $H=192$. Top row: filter taps and spectrum. Bottom row: filter evolution and per-channel norms}{figure.caption.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces DWT filter analysis at $H=336$.}}{24}{figure.caption.25}\protected@file@percent }
+\newlabel{fig:dwt-filters-336}{{22}{24}{DWT filter analysis at $H=336$}{figure.caption.25}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces DWT filter analysis at $H=720$. At longer horizons the high-pass filter shows greater deviation from Haar, consistent with the need to suppress higher-frequency noise as prediction uncertainty grows.}}{24}{figure.caption.26}\protected@file@percent }
+\newlabel{fig:dwt-filters-720}{{23}{24}{DWT filter analysis at $H=720$. At longer horizons the high-pass filter shows greater deviation from Haar, consistent with the need to suppress higher-frequency noise as prediction uncertainty grows}{figure.caption.26}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces All-horizon comparison of per-channel L2 filter norms. The consistent ordering across horizons suggests that filter adaptation is horizon-agnostic at the per-channel level.}}{25}{figure.caption.27}\protected@file@percent }
+\newlabel{fig:filter-norms-all}{{24}{25}{All-horizon comparison of per-channel L2 filter norms. The consistent ordering across horizons suggests that filter adaptation is horizon-agnostic at the per-channel level}{figure.caption.27}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.5}Spectral Analysis}{25}{subsection.8.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces Spectral analysis at $H=96$. Top row: time-domain prediction vs.\ target. Bottom row: power spectral density — input vs.\ LL subband (left), and prediction vs.\ target (right).}}{26}{figure.caption.28}\protected@file@percent }
+\newlabel{fig:spectral-96}{{25}{26}{Spectral analysis at $H=96$. Top row: time-domain prediction vs.\ target. Bottom row: power spectral density — input vs.\ LL subband (left), and prediction vs.\ target (right)}{figure.caption.28}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {26}{\ignorespaces Spectral analysis at $H \in \{192, 336, 720\}$. PSD alignment between prediction and target remains consistent across horizons, indicating robust spectral regularisation.}}{27}{figure.caption.29}\protected@file@percent }
+\newlabel{fig:spectral-others}{{26}{27}{Spectral analysis at $H \in \{192, 336, 720\}$. PSD alignment between prediction and target remains consistent across horizons, indicating robust spectral regularisation}{figure.caption.29}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.6}Attention Analysis}{27}{subsection.8.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {27}{\ignorespaces $H=96$. Left: LL-subband attention weight matrix (heads averaged). Right: Learned sparsity threshold $\tau $ for the HF routing path.}}{27}{figure.caption.30}\protected@file@percent }
+\newlabel{fig:attention-96}{{27}{27}{$H=96$. Left: LL-subband attention weight matrix (heads averaged). Right: Learned sparsity threshold $\tau $ for the HF routing path}{figure.caption.30}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {28}{\ignorespaces Attention analysis at $H=192$.}}{28}{figure.caption.31}\protected@file@percent }
+\newlabel{fig:attention-192}{{28}{28}{Attention analysis at $H=192$}{figure.caption.31}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {29}{\ignorespaces Attention analysis at $H=336$.}}{28}{figure.caption.32}\protected@file@percent }
+\newlabel{fig:attention-336}{{29}{28}{Attention analysis at $H=336$}{figure.caption.32}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {30}{\ignorespaces Attention analysis at $H=720$. The attention matrix becomes sparser at longer horizons, consistent with the model relying more on local context when long-range information is less reliable.}}{28}{figure.caption.33}\protected@file@percent }
+\newlabel{fig:attention-720}{{30}{28}{Attention analysis at $H=720$. The attention matrix becomes sparser at longer horizons, consistent with the model relying more on local context when long-range information is less reliable}{figure.caption.33}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.7}Variate Graph and Cross-Variate Attention}{28}{subsection.8.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {31}{\ignorespaces $H=96$. Left: Cross-variate attention heatmap. Right: Binarised adjacency matrix of the variate interaction graph.}}{28}{figure.caption.34}\protected@file@percent }
+\newlabel{fig:variate-96}{{31}{28}{$H=96$. Left: Cross-variate attention heatmap. Right: Binarised adjacency matrix of the variate interaction graph}{figure.caption.34}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {32}{\ignorespaces Variate graph analysis at $H=192$.}}{29}{figure.caption.35}\protected@file@percent }
+\newlabel{fig:variate-192}{{32}{29}{Variate graph analysis at $H=192$}{figure.caption.35}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {33}{\ignorespaces Variate graph analysis at $H=336$.}}{29}{figure.caption.36}\protected@file@percent }
+\newlabel{fig:variate-336}{{33}{29}{Variate graph analysis at $H=336$}{figure.caption.36}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {34}{\ignorespaces Variate graph analysis at $H=720$.}}{29}{figure.caption.37}\protected@file@percent }
+\newlabel{fig:variate-720}{{34}{29}{Variate graph analysis at $H=720$}{figure.caption.37}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {35}{\ignorespaces Comparison of Pearson correlation matrix (empirical) against the learned variate interaction weights. High agreement indicates that P-WSA's shared-weight CI scheme implicitly encodes variate correlations through the training loss, even without explicit cross-variate attention.}}{30}{figure.caption.38}\protected@file@percent }
+\newlabel{fig:corr-vs-learned}{{35}{30}{Comparison of Pearson correlation matrix (empirical) against the learned variate interaction weights. High agreement indicates that P-WSA's shared-weight CI scheme implicitly encodes variate correlations through the training loss, even without explicit cross-variate attention}{figure.caption.38}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9}Model Complexity}{30}{section.9}\protected@file@percent }
+\newlabel{sec:complexity}{{9}{30}{Model Complexity}{section.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {10}Design Rationale and Lessons Learned}{30}{section.10}\protected@file@percent }
+\newlabel{sec:lessons}{{10}{30}{Design Rationale and Lessons Learned}{section.10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {11}Conclusion}{31}{section.11}\protected@file@percent }
+\newlabel{sec:conc}{{11}{31}{Conclusion}{section.11}{}}
+\@writefile{toc}{\contentsline {section}{References}{31}{section.11}\protected@file@percent }
+\gdef \@abspage@last{31}

@@ -129,7 +129,7 @@ if __name__ == "__main__":
         in_channels=IN_CHANNELS, 
         d_model=64, 
         num_heads=4, 
-        tau_type='fixed',
+        tau_type='adaptive',
         learning_rate=1e-4,
         lambda_recon=5.0,
         lambda_ortho=1.0

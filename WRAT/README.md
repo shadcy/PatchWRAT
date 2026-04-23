@@ -35,3 +35,10 @@ python run_pipeline.py --epochs 30 --batch_size 64 --lr 1e-3
 ## Output
 It will download the dataset if it is not present in the current working directory.
 After training, it will evaluate on the test split and print out a comparative benchmark table. Finally, it generates and saves `wrat_benchmark_results.png` which contains visually informative diagnostic plots (loss curves, sparsity tracking, qualitative forecast plots, and bar charts computing performance metrics).
+
+
+Auther's commands
+
+ C:\Users\Asus\radioconda\python.exe main.py --epochs 30 --batch_size 64 --seq_len 128 --lr 0.001
+
+ 

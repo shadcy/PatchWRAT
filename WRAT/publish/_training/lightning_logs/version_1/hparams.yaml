@@ -1,0 +1,9 @@
+d_model: 64
+in_channels: 7
+lambda_ortho: 0.1
+lambda_recon: 1.0
+learning_rate: 0.0001
+num_heads: 4
+tau_init: 0.1
+tau_type: learnable
+weight_decay: 0.0001

@@ -1,0 +1,375 @@
+
+PS C:\Users\Asus\Desktop\TTS\Rat> C:\Users\Asus\radioconda\python.exe wrat.py
+Device  : cuda
+File    : ETTh1.csv
+Horizons: [1, 96, 192, 336, 720]
+Epochs  : up to 60 (patience=15, warmup=5)
+d_model=64  |  batch=64
+
+
+====================================================================
+  HORIZON = 1 steps
+====================================================================
+  Train:8,543  Val:2,783  Test:5,803
+
+  WRAT parameters per variant: 116,961
+
+   Ep       Fixed   Adaptive  Learnable   Ablation
+  ------------------------------------------------
+    1     0.03473    0.03105    0.03591    0.04162
+   10     0.00996    0.01049    0.01006    0.01033
+   20     0.00998    0.01028    0.00965    0.00967
+  → WRAT_Fixed early stop @ epoch 28 (best val MAE=0.06446)
+   30     0.00977    0.01045    0.00988    0.00971
+  → WRAT_Adaptive early stop @ epoch 33 (best val MAE=0.06468)
+  → WRAT_Learnable early stop @ epoch 33 (best val MAE=0.06493)
+  → WRAT_Ablation early stop @ epoch 39 (best val MAE=0.06387)
+  All models stopped. Moving to next horizon.
+
+  Test results — Horizon 1:
+  Model                   MAE     RMSE   sMAPE%      R2   DirAcc%  StopEp
+  --------------------------------------------------------------------
+  WRAT_Fixed           0.0468   0.0674    13.38  0.9707     45.53      28
+  WRAT_Adaptive        0.0467   0.0674    13.34  0.9707     45.74      33
+  WRAT_Learnable       0.0467   0.0672    13.37  0.9709     45.60      33
+  WRAT_Ablation        0.0465   0.0671    13.36  0.9710     45.49      39
+
+====================================================================
+  HORIZON = 96 steps
+====================================================================
+  Train:8,448  Val:2,688  Test:5,708
+   Ep       Fixed   Adaptive  Learnable   Ablation
+  ------------------------------------------------
+    1     0.12112    0.12090    0.12076    0.12183
+   10     0.10553    0.09927    0.10060    0.09989
+   20     0.10766    0.11336    0.10213    0.10037
+  → WRAT_Adaptive early stop @ epoch 24 (best val MAE=0.24434)
+  → WRAT_Fixed early stop @ epoch 30 (best val MAE=0.24731)
+   30     0.11965    0.11066    0.11453    0.10178
+  → WRAT_Learnable early stop @ epoch 31 (best val MAE=0.24591)
+   40     0.11965    0.11066    0.11577    0.10419
+  → WRAT_Ablation early stop @ epoch 41 (best val MAE=0.24443)
+  All models stopped. Moving to next horizon.
+
+  Test results — Horizon 96:
+  Model                   MAE     RMSE   sMAPE%      R2   DirAcc%  StopEp
+  --------------------------------------------------------------------
+  WRAT_Fixed           0.2091   0.2762    39.64  0.5092     53.60      30
+  WRAT_Adaptive        0.2101   0.2791    39.18  0.4990     52.47      24
+  WRAT_Learnable       0.2083   0.2751    39.63  0.5131     53.28      31
+  WRAT_Ablation        0.2095   0.2773    39.53  0.5052     53.45      41
+
+====================================================================
+  HORIZON = 192 steps
+====================================================================
+  Train:8,352  Val:2,592  Test:5,612
+   Ep       Fixed   Adaptive  Learnable   Ablation
+  ------------------------------------------------
+    1     0.13358    0.13376    0.13371    0.13418
+   10     0.11695    0.12401    0.11744    0.11578
+   20     0.12006    0.12342    0.12569    0.11541
+  → WRAT_Learnable early stop @ epoch 27 (best val MAE=0.26365)
+  → WRAT_Adaptive early stop @ epoch 28 (best val MAE=0.26355)
+   30     0.13278    0.14245    0.14115    0.11452
+  → WRAT_Fixed early stop @ epoch 31 (best val MAE=0.26570)
+   40     0.14228    0.14245    0.14115    0.13882
+  → WRAT_Ablation early stop @ epoch 41 (best val MAE=0.26509)
+  All models stopped. Moving to next horizon.
+
+  Test results — Horizon 192:
+  Model                   MAE     RMSE   sMAPE%      R2   DirAcc%  StopEp
+  --------------------------------------------------------------------
+  WRAT_Fixed           0.2355   0.3089    43.98  0.3912     52.05      31
+  WRAT_Adaptive        0.2364   0.3095    43.93  0.3888     52.43      28
+  WRAT_Learnable       0.2371   0.3109    44.10  0.3833     52.35      27
+  WRAT_Ablation        0.2401   0.3118    46.07  0.3797     52.74      41
+
+====================================================================
+  HORIZON = 336 steps
+====================================================================
+  Train:8,208  Val:2,448  Test:5,468
+   Ep       Fixed   Adaptive  Learnable   Ablation
+  ------------------------------------------------
+    1     0.15057    0.15057    0.15088    0.15085
+   10     0.13766    0.12521    0.12897    0.13228
+   20     0.12350    0.12881    0.15740    0.13027
+  → WRAT_Adaptive early stop @ epoch 25 (best val MAE=0.28074)
+  → WRAT_Learnable early stop @ epoch 26 (best val MAE=0.28250)
+   30     0.15275    0.15721    0.16326    0.16345
+  → WRAT_Fixed early stop @ epoch 35 (best val MAE=0.27839)
+  → WRAT_Ablation early stop @ epoch 35 (best val MAE=0.28628)
+  All models stopped. Moving to next horizon.
+
+  Test results — Horizon 336:
+  Model                   MAE     RMSE   sMAPE%      R2   DirAcc%  StopEp
+  --------------------------------------------------------------------
+  WRAT_Fixed           0.2546   0.3280    47.47  0.3148     52.11      35
+  WRAT_Adaptive        0.2540   0.3237    48.15  0.3326     51.80      25
+  WRAT_Learnable       0.2571   0.3306    48.07  0.3040     51.59      26
+  WRAT_Ablation        0.2575   0.3301    49.34  0.3058     52.10      35
+
+====================================================================
+  HORIZON = 720 steps
+====================================================================
+  Train:7,824  Val:2,064  Test:5,084
+   Ep       Fixed   Adaptive  Learnable   Ablation
+  ------------------------------------------------
+    1     0.21588    0.21528    0.21574    0.21636
+   10     0.17292    0.16621    0.15678    0.17088
+   20     0.16320    0.19644    0.15419    0.16606
+  → WRAT_Fixed early stop @ epoch 23 (best val MAE=0.30703)
+  → WRAT_Adaptive early stop @ epoch 24 (best val MAE=0.30631)
+  → WRAT_Ablation early stop @ epoch 27 (best val MAE=0.30348)
+  → WRAT_Learnable early stop @ epoch 28 (best val MAE=0.30045)
+  All models stopped. Moving to next horizon.
+
+  Test results — Horizon 720:
+  Model                   MAE     RMSE   sMAPE%      R2   DirAcc%  StopEp
+  --------------------------------------------------------------------
+  WRAT_Fixed           0.2936   0.3760    57.38  0.1049     49.85      23
+  WRAT_Adaptive        0.2834   0.3613    53.21  0.1734     50.77      24
+  WRAT_Learnable       0.2830   0.3606    53.59  0.1768     50.72      28
+  WRAT_Ablation        0.2920   0.3722    56.65  0.1228     50.90      27
+
+============================================================================
+  MAE  (lower is better)
+============================================================================
+  Model               H=1       H=96      H=192     H=336     H=720       AVG
+  ------------------------------------------------------------------------
+  WRAT_Fixed           0.0468   0.2091   0.2355   0.2546   0.2936   0.2079
+  WRAT_Adaptive        0.0467   0.2101   0.2364   0.2540   0.2834   0.2061
+  WRAT_Learnable       0.0467   0.2083   0.2371   0.2571   0.2830   0.2065
+  WRAT_Ablation        0.0465   0.2095   0.2401   0.2575   0.2920   0.2091
+
+============================================================================
+  RMSE  (lower is better)
+============================================================================
+  Model               H=1       H=96      H=192     H=336     H=720       AVG
+  ------------------------------------------------------------------------
+  WRAT_Fixed           0.0674   0.2762   0.3089   0.3280   0.3760   0.2713
+  WRAT_Adaptive        0.0674   0.2791   0.3095   0.3237   0.3613   0.2682
+  WRAT_Learnable       0.0672   0.2751   0.3109   0.3306   0.3606   0.2689
+  WRAT_Ablation        0.0671   0.2773   0.3118   0.3301   0.3722   0.2717
+
+============================================================================
+  sMAPE%  (lower is better)
+============================================================================
+  Model               H=1       H=96      H=192     H=336     H=720       AVG
+  ------------------------------------------------------------------------
+  WRAT_Fixed          13.3812  39.6381  43.9795  47.4664  57.3848  40.3700
+  WRAT_Adaptive       13.3425  39.1843  43.9341  48.1522  53.2095  39.5645
+  WRAT_Learnable      13.3706  39.6262  44.1045  48.0700  53.5851  39.7513
+  WRAT_Ablation       13.3635  39.5261  46.0727  49.3404  56.6477  40.9901
+
+============================================================================
+  R2  (higher is better)
+============================================================================
+  Model               H=1       H=96      H=192     H=336     H=720       AVG
+  ------------------------------------------------------------------------
+  WRAT_Fixed           0.9707   0.5092   0.3912   0.3148   0.1049   0.4582
+  WRAT_Adaptive        0.9707   0.4990   0.3888   0.3326   0.1734   0.4729
+  WRAT_Learnable       0.9709   0.5131   0.3833   0.3040   0.1768   0.4696
+  WRAT_Ablation        0.9710   0.5052   0.3797   0.3058   0.1228   0.4569
+
+============================================================================
+  DirAcc%  (higher is better)
+============================================================================
+  Model               H=1       H=96      H=192     H=336     H=720       AVG
+  ------------------------------------------------------------------------
+  WRAT_Fixed          45.5287  53.6020  52.0496  52.1063  49.8487  50.6271
+  WRAT_Adaptive       45.7371  52.4680  52.4265  51.8034  50.7663  50.6403
+  WRAT_Learnable      45.5982  53.2773  52.3484  51.5865  50.7195  50.7060
+  WRAT_Ablation       45.4940  53.4512  52.7442  52.0986  50.8994  50.9375
+
+============================================================
+  ABLATION — HF attention contribution (DirAcc delta)
+============================================================
+  H=1     Fixed=45.53%  Ablation=45.49%  delta=+0.03pp
+  H=96    Fixed=53.60%  Ablation=53.45%  delta=+0.15pp
+  H=192   Fixed=52.05%  Ablation=52.74%  delta=-0.69pp
+  H=336   Fixed=52.11%  Ablation=52.10%  delta=+0.01pp
+  H=720   Fixed=49.85%  Ablation=50.90%  delta=-1.05pp
+
+  Learnable tau (H=720): 0.1000
+
+Plot saved -> wrat_etth1_benchmark.png
+
+All done.
+PS C:\Users\Asus\Desktop\TTS\Rat>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PS C:\Users\Asus\Desktop\TTS\Rat\pwsa> C:\Users\Asus\radioconda\python.exe x.py
+[ENV]  Device : cuda | PyTorch 2.4.1+cu121
+[DATA] ETTm1.csv  seq=336  horizons=[96, 192, 336, 720]
+======================================================================
+
+======================================================================
+  HORIZON = 96  |  seq=336
+======================================================================
+
+  [P-WSA v8]  params=372,550  mode=multivariate(7)
+    [P-WSA v8] ep  1  train=0.34532  val=0.27628  ✓
+    [P-WSA v8] ep  2  train=0.25900  val=0.26789  ✓
+    [P-WSA v8] ep  3  train=0.25372  val=0.26531  ✓
+    [P-WSA v8] ep  6  train=0.24376  val=0.26488  ✓
+    [P-WSA v8] ep  7  train=0.23994  val=0.25965  ✓
+    [P-WSA v8] ep  8  train=0.23690  val=0.25936  ✓
+    [P-WSA v8] ep 10  train=0.23253  val=0.25726  ✓
+    [P-WSA v8] ep 20  train=0.21875  val=0.26913  
+    [P-WSA v8] Early stop @ ep20  best_val=0.25726
+
+  [PatchWRAT] params=1,062,053  mode=univariate(OT)
+    [PatchWRAT] ep  1  train=0.12639  val=0.05469  ✓
+    [PatchWRAT] ep  2  train=0.14071  val=0.04429  ✓
+    [PatchWRAT] ep 10  train=0.10304  val=0.04568  
+    [PatchWRAT] Early stop @ ep12  best_val=0.04429
+
+  ┌─ Horizon 96 Results ──────────────────────────────────────┐
+  │  Model               MSE       MAE    DirAcc    vs iTransf  │
+  │  ──────────────────────────────────────────────────────────  │
+  │  P-WSA v8         0.3485    0.3927     50.2%  +0.0145          │
+  │  PatchWRAT        0.0476    0.1611     43.2%  -0.2864          │
+  └──────────────────────────────────────────────────────────────┘
+
+======================================================================
+  HORIZON = 192  |  seq=336
+======================================================================
+
+  [P-WSA v8]  params=666,214  mode=multivariate(7)
+    [P-WSA v8] ep  1  train=0.38467  val=0.32460  ✓
+    [P-WSA v8] ep  2  train=0.31182  val=0.31726  ✓
+    [P-WSA v8] ep  3  train=0.30786  val=0.31676  ✓
+    [P-WSA v8] ep  4  train=0.30670  val=0.31531  ✓
+    [P-WSA v8] ep  5  train=0.30412  val=0.31329  ✓
+    [P-WSA v8] ep  7  train=0.29606  val=0.31252  ✓
+    [P-WSA v8] ep 10  train=0.28884  val=0.31795  
+    [P-WSA v8] ep 11  train=0.28703  val=0.31165  ✓
+    [P-WSA v8] ep 20  train=0.27441  val=0.31681  
+    [P-WSA v8] Early stop @ ep21  best_val=0.31165
+
+  [PatchWRAT] params=2,094,341  mode=univariate(OT)
+    [PatchWRAT] ep  1  train=0.15722  val=0.06641  ✓
+    [PatchWRAT] ep  2  train=0.14133  val=0.06143  ✓
+    [PatchWRAT] ep 10  train=0.11680  val=0.06589  
+    [PatchWRAT] Early stop @ ep12  best_val=0.06143
+
+  ┌─ Horizon 192 Results ──────────────────────────────────────┐
+  │  Model               MSE       MAE    DirAcc    vs iTransf  │
+  │  ──────────────────────────────────────────────────────────  │
+  │  P-WSA v8         0.4072    0.4338     48.9%  +0.0302          │
+  │  PatchWRAT        0.0714    0.2027     44.2%  -0.3056          │
+  └──────────────────────────────────────────────────────────────┘
+
+======================================================================
+  HORIZON = 336  |  seq=336
+======================================================================
+
+  [P-WSA v8]  params=1,106,710  mode=multivariate(7)
+    [P-WSA v8] ep  1  train=0.42627  val=0.37005  ✓
+    [P-WSA v8] ep  2  train=0.36239  val=0.36330  ✓
+    [P-WSA v8] ep  4  train=0.35815  val=0.36236  ✓
+    [P-WSA v8] ep  5  train=0.35639  val=0.35952  ✓
+    [P-WSA v8] ep  7  train=0.35092  val=0.35784  ✓
+    [P-WSA v8] ep  8  train=0.34829  val=0.35570  ✓
+    [P-WSA v8] ep  9  train=0.34648  val=0.35509  ✓
+    [P-WSA v8] ep 10  train=0.34440  val=0.35335  ✓
+    [P-WSA v8] ep 14  train=0.33782  val=0.35116  ✓
+    [P-WSA v8] ep 20  train=0.32975  val=0.36180  
+    [P-WSA v8] Early stop @ ep24  best_val=0.35116
+
+  [PatchWRAT] params=3,642,773  mode=univariate(OT)
+    [PatchWRAT] ep  1  train=0.20167  val=0.08405  ✓
+    [PatchWRAT] ep  2  train=0.18703  val=0.08367  ✓
+    [PatchWRAT] ep  4  train=0.17118  val=0.08192  ✓
+    [PatchWRAT] ep 10  train=0.14241  val=0.09285  
+    [PatchWRAT] Early stop @ ep14  best_val=0.08192
+
+  ┌─ Horizon 336 Results ──────────────────────────────────────┐
+  │  Model               MSE       MAE    DirAcc    vs iTransf  │
+  │  ──────────────────────────────────────────────────────────  │
+  │  P-WSA v8         0.4335    0.4530     49.2%  +0.0075          │
+  │  PatchWRAT        0.1023    0.2417     44.7%  -0.3237          │
+  └──────────────────────────────────────────────────────────────┘
+
+======================================================================
+  HORIZON = 720  |  seq=336
+======================================================================
+
+  [P-WSA v8]  params=2,281,366  mode=multivariate(7)
+    [P-WSA v8] ep  1  train=0.50980  val=0.46255  ✓
+    [P-WSA v8] ep  2  train=0.45427  val=0.45643  ✓
+    [P-WSA v8] ep  4  train=0.44991  val=0.45504  ✓
+    [P-WSA v8] ep  5  train=0.44834  val=0.45299  ✓
+    [P-WSA v8] ep  6  train=0.44512  val=0.45286  ✓
+    [P-WSA v8] ep  7  train=0.44083  val=0.44673  ✓
+    [P-WSA v8] ep  9  train=0.43193  val=0.44220  ✓
+    [P-WSA v8] ep 10  train=0.42876  val=0.44707  
+    [P-WSA v8] ep 11  train=0.42616  val=0.43579  ✓
+    [P-WSA v8] ep 20  train=0.40194  val=0.46430  
+    [P-WSA v8] Early stop @ ep21  best_val=0.43579
+
+  [PatchWRAT] params=7,771,925  mode=univariate(OT)
+    [PatchWRAT] ep  1  train=0.23407  val=0.10612  ✓
+    [PatchWRAT] ep  2  train=0.24429  val=0.10488  ✓
+    [PatchWRAT] ep  3  train=0.21534  val=0.10154  ✓
+    [PatchWRAT] ep 10  train=0.18232  val=0.11702  
+    [PatchWRAT] Early stop @ ep13  best_val=0.10154
+
+  ┌─ Horizon 720 Results ──────────────────────────────────────┐
+  │  Model               MSE       MAE    DirAcc    vs iTransf  │
+  │  ──────────────────────────────────────────────────────────  │
+  │  P-WSA v8         0.4984    0.4996     48.1%  +0.0074          │
+  │  PatchWRAT        0.1284    0.2751     44.0%  -0.3626          │
+  └──────────────────────────────────────────────────────────────┘
+
+
+======================================================================
+  FINAL BENCHMARK SUMMARY
+  (iTransformer SOTA reference for ETTm1)
+======================================================================
+      H │  P-WSA v8 MSE │ PatchWRAT MSE │       Winner │ SOTA
+  ──────┼───────────────┼───────────────┼──────────────┼───────
+     96 │        0.3485 │        0.0476 │    PatchWRAT │ 0.334
+    192 │        0.4072 │        0.0714 │    PatchWRAT │ 0.377
+    336 │        0.4335 │        0.1023 │    PatchWRAT │ 0.426
+    720 │        0.4984 │        0.1284 │    PatchWRAT │ 0.491
+
+  Overall wins  →  P-WSA v8: 0/4   PatchWRAT: 4/4
+
+  ✦ RECOMMENDATION: PatchWRAT
+    PatchWRAT wins — learned conv filters + sparse attention provide
+    better signal decomposition. Consider scaling d_model and adding
+    multi-variate support as the next step.
+
+======================================================================
+
+PS C:\Users\Asus\Desktop\TTS\Rat\pwsa> ^C
+PS C:\Users\Asus\Desktop\TTS\Rat\pwsa>

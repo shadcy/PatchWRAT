@@ -1,0 +1,116 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand*\HyPL@Entry[1]{}
+\HyPL@Entry{0<</S/D>>}
+\pgfsyspdfmark {pgfid2}{5920358}{41113256}
+\pgfsyspdfmark {pgfid1}{5920358}{45694728}
+\HyPL@Entry{1<</S/D>>}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{3}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Why Good Forecasting Matters}{3}{subsection.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}What is Broken in Current Models}{3}{subsection.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3}The Core Idea Behind PatchWRAT}{3}{subsection.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4}Summary of Contributions}{3}{subsection.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Background and Related Work}{4}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}The Evolution of Forecasting Models}{4}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Why Patches Changed Everything}{4}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Wavelets in Deep Learning}{4}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Handling Non-Stationarity with RevIN}{5}{subsection.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Mathematical Foundations}{5}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}The Discrete Wavelet Transform}{5}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Frequency Sparse Attention}{5}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}The Orthogonality Loss}{6}{subsection.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}The Horizon–Frequency Lemma}{6}{subsection.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}The PatchWRAT Architecture}{7}{section.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Full end-to-end architecture of PatchWRAT. Data flows left to right through RevIN normalisation, learnable DWT decomposition, the WRATBlock routing module, and a final linear projection head.}}{7}{figure.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:overall_arch}{{1}{7}{Full end-to-end architecture of PatchWRAT. Data flows left to right through RevIN normalisation, learnable DWT decomposition, the WRATBlock routing module, and a final linear projection head}{figure.caption.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Stage 1 — Reversible Instance Normalisation}{8}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Stage 2 — Learnable DWT Decomposition}{8}{subsection.4.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The Learnable 1D DWT — replacing a fixed mathematical basis with trainable convolutional filters.}}{9}{figure.caption.2}\protected@file@percent }
+\newlabel{fig:learnable_dwt}{{2}{9}{The Learnable 1D DWT — replacing a fixed mathematical basis with trainable convolutional filters}{figure.caption.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Stage 3 — WRATBlock Routing}{9}{subsection.4.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The WRATBlock routing mechanism. $LL$ (trend) goes through dense attention; $LH$ (detail) goes through sparse thresholded attention; cross-attention fuses them.}}{11}{figure.caption.3}\protected@file@percent }
+\newlabel{fig:wratblock}{{3}{11}{The WRATBlock routing mechanism. $LL$ (trend) goes through dense attention; $LH$ (detail) goes through sparse thresholded attention; cross-attention fuses them}{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Stage 4 — Linear Projection Head}{11}{subsection.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Training Setup}{12}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Loss Function}{12}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Optimiser and Schedule}{12}{subsection.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Data and Splits}{12}{subsection.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Results and Ablation Study}{12}{section.6}\protected@file@percent }
+\newlabel{sec:results}{{6}{12}{Results and Ablation Study}{section.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Ablation: What Does Each Component Contribute?}{12}{subsection.6.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Ablation results on ETTm1. Each row removes one component while keeping everything else fixed. \textbf  {Bold} marks the best value per column; \textcolor {red}{red} marks the worst.}}{13}{table.caption.4}\protected@file@percent }
+\newlabel{tab:ablation}{{1}{13}{Ablation results on ETTm1. Each row removes one component while keeping everything else fixed. \textbf {Bold} marks the best value per column; \textcolor {red}{red} marks the worst}{table.caption.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Comparison Against State-of-the-Art}{14}{subsection.6.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Transformer-based models on ETTm1. 1st in \textcolor {red}{\textbf  {red}}, 2nd in \textcolor {blue}{\underline  {blue}}, 3rd in \textcolor {green}{\textit  {green}}.}}{14}{table.caption.5}\protected@file@percent }
+\newlabel{tab:transformer}{{2}{14}{Transformer-based models on ETTm1. 1st in \textcolor {red}{\textbf {red}}, 2nd in \textcolor {blue}{\underline {blue}}, 3rd in \textcolor {green}{\textit {green}}}{table.caption.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces All model families on ETTm1. 1st in \textcolor {red}{\textbf  {red}}, 2nd in \textcolor {blue}{\underline  {blue}}, 3rd in \textcolor {green}{\textit  {green}}.}}{14}{table.caption.6}\protected@file@percent }
+\newlabel{tab:overall}{{3}{14}{All model families on ETTm1. 1st in \textcolor {red}{\textbf {red}}, 2nd in \textcolor {blue}{\underline {blue}}, 3rd in \textcolor {green}{\textit {green}}}{table.caption.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Focused Analysis: PatchWRAT (w/o Sparse Attention)}{15}{subsection.6.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces PatchWRAT (w/o Sparse Attention) vs. top-ranked models on ETTm1.}}{15}{table.caption.7}\protected@file@percent }
+\newlabel{tab:ablative}{{4}{15}{PatchWRAT (w/o Sparse Attention) vs. top-ranked models on ETTm1}{table.caption.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{15}{section.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{References}{16}{section.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{Appendix A — Prediction Visualisations}{17}{Item.14}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces All 7 variates at $H=96$. The model preserves structural shifts without being pulled by high-frequency jitter.}}{18}{figure.caption.8}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces All 7 variates at $H=192$.}}{19}{figure.caption.9}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces All 7 variates at $H=336$.}}{20}{figure.caption.10}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces All 7 variates at $H=720$. Despite the long horizon, the low-frequency branch maintains good structural alignment with the ground truth.}}{21}{figure.caption.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{Appendix B — Supplementary Plots (pwsa v8.0)}{22}{figure.caption.11}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Attention maps and learned sparsity thresholds across all horizons. Note how the attention matrix becomes sparser at longer horizons, consistent with the model relying more on local context as long-range information decays.}}{23}{figure.caption.15}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Power spectral density of predictions vs.\ targets. The spectral penalty visibly aligns the prediction PSD with the target across all horizons.}}{24}{figure.caption.17}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Benchmark summary plots.}}{25}{figure.caption.19}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Learned low-pass and high-pass filter taps and their frequency responses across all horizons. The learned filters deviate measurably from the Haar initialisation, confirming the wavelet thresholding module is actively learning.}}{26}{figure.caption.23}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Per-channel L2 filter norms across all horizons. The consistent ordering suggests filter adaptation is largely horizon-agnostic at the per-channel level.}}{27}{figure.caption.24}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces Training and validation MSE learning curves. Solid lines are validation; dashed lines are training. The warm-up phase is visible at the start of each run, and all horizons converge cleanly with minimal overfitting.}}{28}{figure.caption.26}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces All-horizon validation MSE overlay. Longer horizons converge to higher MSE as expected. The gap between horizons widens after epoch 20.}}{28}{figure.caption.27}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {27}{\ignorespaces Cross-variate attention heatmaps and binarised adjacency matrices across all horizons. Although PatchWRAT uses Channel Independence, the shared weights implicitly encode inter-variate correlations through the training loss.}}{29}{figure.caption.31}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {28}{\ignorespaces Pearson correlation matrix vs.\ learned variate interaction weights. The high agreement confirms that the CI scheme implicitly captures cross-variate structure even without explicit cross-variate attention.}}{30}{figure.caption.32}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {29}{\ignorespaces All-variate prediction grid, $H=96$.}}{31}{figure.caption.33}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {30}{\ignorespaces Horizon error profile, $H=96$. MAE increases monotonically with step index.}}{32}{figure.caption.34}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {31}{\ignorespaces Residual diagnostics, $H=96$: histogram, Q-Q plot, and ACF up to lag 30.}}{32}{figure.caption.35}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {32}{\ignorespaces HUFL variate, $H=96$, three random test samples.}}{32}{figure.caption.36}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {33}{\ignorespaces HULL variate, $H=96$.}}{32}{figure.caption.37}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {34}{\ignorespaces MUFL variate, $H=96$.}}{32}{figure.caption.38}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {35}{\ignorespaces MULL variate, $H=96$.}}{33}{figure.caption.39}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {36}{\ignorespaces LUFL variate, $H=96$.}}{33}{figure.caption.40}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {37}{\ignorespaces LULL variate, $H=96$.}}{33}{figure.caption.41}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {38}{\ignorespaces OT (oil temperature) variate, $H=96$. The OT variate shows the cleanest fit due to its relatively stationary dynamics.}}{33}{figure.caption.42}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {39}{\ignorespaces All-variate prediction grid, $H=192$.}}{34}{figure.caption.43}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {40}{\ignorespaces Horizon error profile, $H=192$.}}{34}{figure.caption.44}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {41}{\ignorespaces Residual diagnostics, $H=192$.}}{35}{figure.caption.45}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {42}{\ignorespaces HUFL, $H=192$.}}{35}{figure.caption.46}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {43}{\ignorespaces HULL, $H=192$.}}{35}{figure.caption.47}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {44}{\ignorespaces MUFL, $H=192$.}}{35}{figure.caption.48}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {45}{\ignorespaces MULL, $H=192$.}}{35}{figure.caption.49}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {46}{\ignorespaces LUFL, $H=192$.}}{35}{figure.caption.50}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {47}{\ignorespaces LULL, $H=192$.}}{36}{figure.caption.51}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {48}{\ignorespaces OT, $H=192$.}}{36}{figure.caption.52}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {49}{\ignorespaces All-variate prediction grid, $H=336$.}}{37}{figure.caption.53}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {50}{\ignorespaces Horizon error profile, $H=336$.}}{37}{figure.caption.54}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {51}{\ignorespaces Residual diagnostics, $H=336$.}}{38}{figure.caption.55}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {52}{\ignorespaces HUFL, $H=336$.}}{38}{figure.caption.56}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {53}{\ignorespaces HULL, $H=336$.}}{38}{figure.caption.57}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {54}{\ignorespaces MUFL, $H=336$.}}{38}{figure.caption.58}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {55}{\ignorespaces MULL, $H=336$.}}{38}{figure.caption.59}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {56}{\ignorespaces LUFL, $H=336$.}}{38}{figure.caption.60}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {57}{\ignorespaces LULL, $H=336$.}}{39}{figure.caption.61}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {58}{\ignorespaces OT, $H=336$.}}{39}{figure.caption.62}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {59}{\ignorespaces All-variate prediction grid, $H=720$.}}{40}{figure.caption.63}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {60}{\ignorespaces Horizon error profile, $H=720$. The steeper gradient compared to shorter horizons reflects accelerated information decay over long sequences.}}{40}{figure.caption.64}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {61}{\ignorespaces Residual diagnostics, $H=720$.}}{41}{figure.caption.65}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {62}{\ignorespaces HUFL, $H=720$.}}{41}{figure.caption.66}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {63}{\ignorespaces HULL, $H=720$.}}{41}{figure.caption.67}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {64}{\ignorespaces MUFL, $H=720$.}}{41}{figure.caption.68}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {65}{\ignorespaces MULL, $H=720$.}}{41}{figure.caption.69}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {66}{\ignorespaces LUFL, $H=720$.}}{41}{figure.caption.70}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {67}{\ignorespaces LULL, $H=720$.}}{42}{figure.caption.71}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {68}{\ignorespaces OT, $H=720$.}}{42}{figure.caption.72}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{Appendix C — WMRTv2 Improved Architecture Results}{43}{figure.caption.72}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces WMRTv2 Benchmark Results on ETTm1.}}{43}{table.caption.73}\protected@file@percent }
+\newlabel{tab:wmrtv2_results}{{5}{43}{WMRTv2 Benchmark Results on ETTm1}{table.caption.73}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {69}{\ignorespaces WMRTv2 predictions for all 7 variates at $H=96$.}}{44}{figure.caption.74}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {70}{\ignorespaces WMRTv2 predictions for all 7 variates at $H=192$.}}{45}{figure.caption.75}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {71}{\ignorespaces WMRTv2 predictions for all 7 variates at $H=336$.}}{46}{figure.caption.76}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {72}{\ignorespaces WMRTv2 predictions for all 7 variates at $H=720$.}}{47}{figure.caption.77}\protected@file@percent }
+\gdef \@abspage@last{48}
