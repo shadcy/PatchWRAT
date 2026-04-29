@@ -48,7 +48,7 @@ TTS/
 
 ## Key Results (ETTm1, normalised MSE)
 
-| Horizon | WRAT (original) | P-WSA v8 | **PatchWRAT (final)** |
+| Horizon | WRAT (original) | P-WSA v8 | **PatchWRAT (univariate)** |
 |---------|----------------|----------|----------------------|
 | H=96  | — | 0.3485 | **0.0476** |
 | H=192 | — | 0.4072 | **0.0714** |
