@@ -1,36 +1,56 @@
-#  Time Series Forecasting Model
+# PatchWRAT — Time Series Forecasting Project
 
-## Overview
-This project contains time series forecasting implementations including WRAT (Wavelet Multiresolution Transformer) and PWSA architectures.
+> Wavelet-augmented Patch Transformer for multivariate time-series forecasting.
+> Developed as part of CS728, IIT Bombay, 2025.
 
-## Important Notice
+The **final, clean implementation** lives in [`PatchWRAT_final/`](./PatchWRAT_final/).
+See [`PatchWRAT_final/README.md`](./PatchWRAT_final/README.md) for the full architecture documentation, ablation details, and benchmark results.
 
-**Final RAT Architecture ID Location:**
-The final RAT architecture implementation uses the ID located in:
-```
-/Rat/PWSA/x_publish.py
-```
+---
 
-Please use this file for any further modifications to the RAT architecture. This contains the complete implementation of the Wavelet Multiresolution Transformer (WMRT) framework with multivariate time-series forecasting capabilities.
+## Quick Start
 
-## Project Structure
-- `Rat/` - Main RAT implementation directory
-  - `PWSA/` - PWSA variant implementations
-    - `x_publish.py` - **Final RAT architecture implementation**
-  - `ETTm1.csv` - Dataset file
-  - `wrat.py` - WRAT benchmark implementation
-- `WRAT/` - Additional WRAT variants
-
-## Key Features
-- Multivariate time-series forecasting
-- Channel Independence approach
-- Full Ablation Suite
-- Automated test-set visualizations
-- Same data splits (60/20/20) and horizons [96, 192, 336, 720]
-
-## Usage
 ```bash
-python Rat/PWSA/x_publish.py
+cd PatchWRAT_final
+
+# ETTm1 (standard benchmark)
+python train.py --dataset ett --data_path ../Rat/ETTm1.csv --horizons 96 192 336 720
+
+# MPI Weather
+python train.py --dataset weather --data_path ../Rat/mpi_roof_2017b/mpi_roof_2017b.csv
 ```
 
-Ensure `ETTm1.csv` is available in the `Rat/` directory before running.
+---
+
+## Repository Layout
+
+```
+TTS/
+├── PatchWRAT_final/        ← ✅ Final clean implementation (start here)
+│   ├── model.py            — Architecture: RevIN, PatchEmbed, DWT, WRATBlock, PatchedWSA
+│   ├── utils.py            — Datasets (ETT/Weather), metrics, early stopping, plots
+│   ├── train.py            — CLI training script with full ablation suite
+│   └── README.md           — Detailed architecture & benchmark documentation
+│
+├── Rat/                    ← Experiment workspace
+│   ├── wrat.py             — WRAT ablation benchmark (ETTh1, 4 variants)
+│   ├── modified_arch/      — PatchWRAT development iterations
+│   │   ├── p_wsa.py        — ETTm1 version
+│   │   └── p_wsa_weather.py — MPI Weather version
+│   └── PWSA/               — Earlier P-WSA variants (reference only)
+│
+└── WRAT/                   ← Original WRAT baseline
+    ├── models/wrat.py      — Original wavelet transformer (no patching)
+    └── utils/              — Shared metrics and loss utilities
+```
+
+---
+
+## Key Results (ETTm1, normalised MSE)
+
+| Horizon | WRAT (original) | P-WSA v8 | **PatchWRAT (final)** |
+|---------|----------------|----------|----------------------|
+| H=96  | — | 0.3485 | **0.0476** |
+| H=192 | — | 0.4072 | **0.0714** |
+| H=336 | — | 0.4335 | **0.1023** |
+| H=720 | — | 0.4984 | **0.1284** |
