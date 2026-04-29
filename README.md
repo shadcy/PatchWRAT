@@ -1,4 +1,4 @@
-# TTS - Time Series Forecasting Project
+#  Time Series Forecasting Model
 
 ## Overview
 This project contains time series forecasting implementations including WRAT (Wavelet Multiresolution Transformer) and PWSA architectures.
