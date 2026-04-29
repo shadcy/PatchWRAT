@@ -1,0 +1,62 @@
+# ─── Docs / Reports (large PDFs, LaTeX build artefacts, fonts) ───────────────
+docs/
+**/docs/
+
+# ─── Python ──────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+*.whl
+pip-log.txt
+pip-delete-this-directory.txt
+.venv/
+venv/
+env/
+ENV/
+
+# ─── Jupyter ─────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ─── LaTeX build artefacts ───────────────────────────────────────────────────
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+texput.log
+
+# ─── OS / editor junk ────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+.idea/
+.vscode/
+*.suo
+*.user
+
+# ─── Data / model checkpoints (keep source code only) ────────────────────────
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.npy
+*.npz
+checkpoints/
+results/
+logs/
