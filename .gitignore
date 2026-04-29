@@ -1,3 +1,7 @@
+# ─── Exord (unrelated course files) ─────────────────────────────────────────
+exord/
+**/exord/
+
 # ─── Docs / Reports (large PDFs, LaTeX build artefacts, fonts) ───────────────
 docs/
 **/docs/
